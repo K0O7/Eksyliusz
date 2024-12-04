@@ -18,6 +18,8 @@ jobs:
       #   run: godot --export-release "Windows Desktop" Lem_Jam.zip
 
       - name: Install Butler
-        run: curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default && unzip butler.zip
+        run: curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default && unzip butler.zip -d ~/bin/butler
+        run: chmod +x ~/bin/butler
+        run: export PATH="$PATH:$HOME/bin"
 
       - run: butler -V
