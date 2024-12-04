@@ -13,6 +13,9 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
+
+      - name: Install Godot
+        run: apt-get install godot
       
       - name: Build Godot project
         run: godot --export-release "HTML5" Lem_Jam.zip
