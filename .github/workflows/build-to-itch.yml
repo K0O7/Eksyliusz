@@ -1,0 +1,24 @@
+name: Build to Itch.io
+run-name: ${{ github.actor }} is building to Itch.io 🚀
+
+on: [push]
+
+env:
+  BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+
+
+jobs:
+  env
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      
+      # - name: Build Godot project
+      #   run: godot --export-release "Windows Desktop" Lem_Jam.zip
+
+      - name: Install Butler
+        run: curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default && unzip butler.zip
+
+      - run: butler -V
