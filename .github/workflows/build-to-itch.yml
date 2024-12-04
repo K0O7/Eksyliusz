@@ -8,7 +8,6 @@ env:
 
 
 jobs:
-  env
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
