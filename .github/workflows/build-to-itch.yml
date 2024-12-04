@@ -21,7 +21,7 @@ jobs:
           ./Godot_v4.3-stable_linux.x86_64 --version
       
       - name: Build Godot project
-        run: ./Godot_v4.3-stable_linux.x86_64 --export-release "HTML5" Lem_Jam.zip
+        run: ./Godot_v4.3-stable_linux.x86_64 --rendering-driver opengl3 --export-release "HTML5" Lem_Jam.zip
 
       - name: Install Butler
         run: |
