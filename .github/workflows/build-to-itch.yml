@@ -14,7 +14,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       
-      # - name: Build Godot project
+      - name: Build Godot project
         run: godot --export-release "HTML5" Lem_Jam.zip
 
       - name: Install Butler
