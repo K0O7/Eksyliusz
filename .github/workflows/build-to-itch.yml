@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Godot
-        run: sudo apt-get install godot
+        run: sudo apt install godot
       
       - name: Build Godot project
         run: godot --export-release "HTML5" Lem_Jam.zip
