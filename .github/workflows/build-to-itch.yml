@@ -24,4 +24,5 @@ jobs:
           chmod +x butler
           ./butler -V
 
-      - run: butler -V
+      - name: Upload to Itch.io using Butler
+        run: ./butler login
