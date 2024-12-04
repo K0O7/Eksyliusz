@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
       
       # - name: Build Godot project
-      #   run: godot --export-release "Windows Desktop" Lem_Jam.zip
+        run: godot --export-release "HTML5" Lem_Jam.zip
 
       - name: Install Butler
         run: |
@@ -25,4 +25,6 @@ jobs:
           ./butler -V
 
       - name: Upload to Itch.io using Butler
-        run: ./butler login
+        run: |
+          ./butler login
+          ./butler push Lem_Jam.zip salach-malejkum/lem-jam:html5
