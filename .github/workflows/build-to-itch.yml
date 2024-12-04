@@ -18,11 +18,10 @@ jobs:
         run: |
           wget https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip
           unzip Godot_v4.3-stable_linux.x86_64.zip
-          mv Godot_v4.3-stable_linux.x86_64 ~/bin/godot
-          godot --version
+          ./Godot_v4.3-stable_linux.x86_64 --version
       
       - name: Build Godot project
-        run: godot --export-release "HTML5" Lem_Jam.zip
+        run: ./Godot_v4.3-stable_linux.x86_64 --export-release "HTML5" Lem_Jam.zip
 
       - name: Install Butler
         run: |
