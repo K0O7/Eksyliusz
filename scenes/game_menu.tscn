@@ -1,0 +1,171 @@
+[gd_scene load_steps=5 format=3 uid="uid://hjuxrulef5h"]
+
+[ext_resource type="Script" path="res://scripts/gamemenu.gd" id="1_q4qta"]
+[ext_resource type="PackedScene" uid="uid://bsiev1nkmvlu5" path="res://scenes/node_2d.tscn" id="2_wxy64"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5jhv8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cr0a7"]
+
+[node name="Gamemenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q4qta")
+game_scene = ExtResource("2_wxy64")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="menu" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/menu"]
+material = SubResource("ShaderMaterial_5jhv8")
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "Eksyliusz: The Fall"
+
+[node name="Start" type="Button" parent="MarginContainer/HBoxContainer/menu"]
+material = SubResource("ShaderMaterial_cr0a7")
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 50
+text = "Start"
+
+[node name="Settings" type="Button" parent="MarginContainer/HBoxContainer/menu"]
+material = SubResource("ShaderMaterial_cr0a7")
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+
+[node name="About" type="Button" parent="MarginContainer/HBoxContainer/menu"]
+material = SubResource("ShaderMaterial_cr0a7")
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 50
+text = "About"
+
+[node name="Exit" type="Button" parent="MarginContainer/HBoxContainer/menu"]
+material = SubResource("ShaderMaterial_cr0a7")
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 50
+text = "Exit
+"
+
+[node name="settings" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="SettingLabel" type="Label" parent="MarginContainer/HBoxContainer/settings"]
+material = SubResource("ShaderMaterial_5jhv8")
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 100
+text = "Settings"
+
+[node name="MusicLabel" type="Label" parent="MarginContainer/HBoxContainer/settings"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="musicVol" type="HSlider" parent="MarginContainer/HBoxContainer/settings"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SFXLabel" type="Label" parent="MarginContainer/HBoxContainer/settings"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sfxVol" type="HSlider" parent="MarginContainer/HBoxContainer/settings"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="back" type="Button" parent="MarginContainer/HBoxContainer/settings"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "back"
+
+[node name="about" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AboutLabel" type="Label" parent="MarginContainer/HBoxContainer/about"]
+material = SubResource("ShaderMaterial_5jhv8")
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 100
+text = "About Us"
+
+[node name="creators" type="Label" parent="MarginContainer/HBoxContainer/about"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Game design: 
+Filip Krężel
+
+Programmer:
+Mateusz Salach
+
+Art:
+Dominika Jakubczyk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back" type="Button" parent="MarginContainer/HBoxContainer/about"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "back"
+
+[connection signal="value_changed" from="MarginContainer/HBoxContainer/settings/musicVol" to="." method="_on_music_vol_value_changed"]
+[connection signal="value_changed" from="MarginContainer/HBoxContainer/settings/sfxVol" to="." method="_on_sfx_vol_value_changed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/settings/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/about/back" to="." method="_on_back_pressed"]
