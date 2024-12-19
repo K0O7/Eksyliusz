@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dis05lnjg2q82"
+path="res://.godot/imported/enemy-growl-3.mp3-578d3b1aee4bb885c37dfaa573b71683.mp3str"
+
+[deps]
+
+source_file="res://Cyberiada Audio FX/SFX/Enemy/enemy-growl-3.mp3"
+dest_files=["res://.godot/imported/enemy-growl-3.mp3-578d3b1aee4bb885c37dfaa573b71683.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

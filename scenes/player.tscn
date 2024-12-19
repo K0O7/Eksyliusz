@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_tv2mo"]
 [ext_resource type="Texture2D" uid="uid://74lhawxe5skj" path="res://art/MainCharacter/Idle/Chłop_Stoi-1.PNG" id="2_wlkjr"]
+[ext_resource type="PackedScene" uid="uid://cdcrxuv3omup8" path="res://scenes/pause_menu.tscn" id="3_1burj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmn1p"]
 size = Vector2(26, 26)
@@ -37,6 +38,8 @@ texture = ExtResource("2_wlkjr")
 path_postprocessing = 1
 
 [node name="Area2D" type="Area2D" parent="."]
+
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource("3_1burj")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_o1hu7")
