@@ -12,7 +12,16 @@ config_version=5
 
 config/name="cyberiada-lem-jam"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/image="res://Art/goose_o.png"
+config/icon="res://Art/logo.png"
+boot_splash/minimum_display_time=1200
+
+[autoload]
+
+AudioPlayer="*res://scripts/audio_player.gd"
+GameManager="*res://scripts/game_manager.gd"
 config/icon="res://icon.svg"
+
 
 [dotnet]
 
