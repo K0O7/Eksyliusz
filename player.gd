@@ -47,7 +47,8 @@ func _physics_process(delta):
 		curr_pos = curr_pos + direction
 		global_position = tilemap.map_to_local(curr_pos)
 		set_next_cell_sign.emit()
-		
+	
+	AudioPlayer.random_movement_sfx()
 	velocity = velocity.lerp(speed * direction, acceleration * delta)
 	
 	move_and_slide()

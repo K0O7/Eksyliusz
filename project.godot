@@ -10,9 +10,15 @@ config_version=5
 
 [application]
 
-config/name="cyberiada-lem-jam"
+config/name="Eksyliusz: The Fall"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="res://Art/goose_o.png"
+config/icon="res://Art/logo.png"
+boot_splash/minimum_display_time=1200
+
+[autoload]
+
+AudioPlayer="*res://scripts/audio_player.gd"
 
 [dotnet]
 
