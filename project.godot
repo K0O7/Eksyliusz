@@ -21,6 +21,8 @@ project/assembly_name="cyberiada-lem-jam"
 [global_group]
 
 attackable=""
+player=""
+support=""
 
 [input]
 

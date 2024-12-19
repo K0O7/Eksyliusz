@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://ssiti0i26k5m"]
+[gd_scene load_steps=5 format=3 uid="uid://ssiti0i26k5m"]
 
-[ext_resource type="Script" path="res://scenes/enemy_camp.gd" id="1_njo6u"]
+[ext_resource type="Script" path="res://scripts/enemy_camp.gd" id="1_njo6u"]
 [ext_resource type="Texture2D" uid="uid://c36i4ra5esoyo" path="res://Free/Items/Boxes/Box1/Idle.png" id="1_s2ndf"]
+[ext_resource type="PackedScene" uid="uid://b4ryullhmy4ql" path="res://scenes/entity_spawner.tscn" id="2_68p1t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5kuu"]
 size = Vector2(28, 27)
 
 [node name="enemy_camp" type="Area2D" groups=["attackable"]]
 script = ExtResource("1_njo6u")
+
+[node name="entity_spawner" parent="." instance=ExtResource("2_68p1t")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)

@@ -81,3 +81,12 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		grid_diff = Vector2.ZERO
 		area.camp_is_attacked(self)
 		print("stepped")
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print(body.name)
+	if body.is_in_group("support"):
+		print("supp")
+		power_level += body.power_level
+		power.text = str(power_level)
+		body.give_support()

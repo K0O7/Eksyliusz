@@ -2,7 +2,11 @@ extends Area2D
 
 @export var is_enemy = true
 @export var power_level = 10
+var basic_power = 10
+@export var fight_speed: float = 0.001
 @onready var power: Label = $power
+@onready var entity_spawner: Node2D = $entity_spawner
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +26,10 @@ func camp_is_attacked(player: CharacterBody2D):
 			self.power_level -= 1
 			self.power.text = str(self.power_level)
 			player.power.text = str(player.power_level)
-			await get_tree().create_timer(0.001).timeout
-		queue_free()
+			await get_tree().create_timer(fight_speed).timeout
+		if self.power_level == 0:
+			self.power_level = self.basic_power
+			self.power.text = str(self.power_level)
+			self.is_enemy = false
+			entity_spawner.start = true
 	pass
