@@ -5,8 +5,10 @@ extends CharacterBody2D
 @export var speed: int
 @export var acceleration: int
 @export var starting_pos: Vector2
+@export var power_level: int
 
 @onready var navig_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var power: Label = $power
 
 signal set_next_cell_sign
 
@@ -21,6 +23,7 @@ func _ready():
 	global_position = tilemap.map_to_local(starting_pos)
 	target_pos = tilemap.local_to_map(global_position)
 	set_next_cell_sign.connect(set_next_cell)
+	power.text = str(power_level)
 
 
 func _input(event):
@@ -35,7 +38,7 @@ func _input(event):
 
 func _physics_process(delta):
 	var is_close_to_curr_cell = adjus_to_cell + (tilemap.map_to_local(curr_pos + direction)) - global_position
-	print(is_close_to_curr_cell, global_position)
+	#print(is_close_to_curr_cell, global_position)
 	if (!is_moving && grid_diff == Vector2.ZERO):
 		velocity = Vector2.ZERO
 		direction = Vector2.ZERO
@@ -69,5 +72,12 @@ func set_next_cell():
 		
 	if (direction != Vector2.ZERO):
 		navig_agent.target_position = adjus_to_cell + to_global(tilemap.map_to_local(curr_pos + direction)) 
-		print(direction)
+		#print(direction)
 		is_moving = true
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("attackable") and area.is_enemy:
+		grid_diff = Vector2.ZERO
+		area.camp_is_attacked(self)
+		print("stepped")

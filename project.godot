@@ -18,6 +18,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="cyberiada-lem-jam"
 
+[global_group]
+
+attackable=""
+
 [input]
 
 LMB_click={
