@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/enemy_camp.gd" id="1_njo6u"]
 [ext_resource type="PackedScene" uid="uid://b4ryullhmy4ql" path="res://scenes/entity_spawner.tscn" id="2_68p1t"]
-[ext_resource type="Texture2D" uid="uid://driq66hogh5t3" path="res://Art/MainCharacter/WalkBackwards/Chłop_Idzie_Tyłem-5.PNG" id="3_c7us7"]
+[ext_resource type="Texture2D" uid="uid://driq66hogh5t3" path="res://Art/Villager/WalkBackwards/Chłop_Idzie_Tyłem-5.PNG" id="3_c7us7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5kuu"]
 size = Vector2(28, 27)

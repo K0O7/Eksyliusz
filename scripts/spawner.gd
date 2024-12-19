@@ -23,6 +23,4 @@ func _on_timer_timeout() -> void:
 	if start:
 		var new_entity = entity_to_spawn.instantiate()
 		add_sibling(new_entity)
-		new_entity.global_position.x = global_position.x+spawn_location_offset_X
-		new_entity.global_position.y = global_position.x+spawn_location_offset_Y
-	pass # Replace with function body.
+		new_entity.global_position = global_position

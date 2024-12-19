@@ -6,8 +6,10 @@ extends CharacterBody2D
 @export var acceleration: int
 @export var starting_pos: Vector2
 @export var power_level: int
-@onready var sprite_2d_3: Sprite2D = $Sprite2D3
-@onready var sprite_2d_2: Sprite2D = $Sprite2D2
+@onready var sprite_2d_3: AnimatedSprite2D = $Sprite2D3
+@onready var sprite_2d_2: AnimatedSprite2D = $Sprite2D2
+@onready var animated_sprite_2d: AnimatedSprite2D= $AnimatedSprite2D
+
 
 
 @onready var navig_agent: NavigationAgent2D = $NavigationAgent2D
@@ -44,6 +46,9 @@ func _physics_process(delta):
 	if (!is_moving && grid_diff == Vector2.ZERO):
 		velocity = Vector2.ZERO
 		direction = Vector2.ZERO
+		animated_sprite_2d.play("Idle")
+		sprite_2d_2.play("Idle")
+		sprite_2d_3.play("Idle")
 		is_moving = false
 		return
 		
@@ -61,15 +66,29 @@ func set_next_cell():
 	direction = Vector2.ZERO
 	if (grid_diff.y > 0):
 		direction = Vector2(0, 1)
+		animated_sprite_2d.play("WalkDown")
+		sprite_2d_2.play("WalkDown")
+		sprite_2d_3.play("WalkDown")
 		grid_diff.y -= 1
 	elif (grid_diff.y < 0):
 		direction = Vector2(0, -1)
+		animated_sprite_2d.play("WalkUp")
+		sprite_2d_2.play("WalkUp")
+		sprite_2d_3.play("WalkUp")
 		grid_diff.y += 1
 	elif (grid_diff.x > 0):
 		direction = Vector2(1, 0)
+		animated_sprite_2d.play("WalkSides")
+		sprite_2d_2.play("WalkRight")
+		sprite_2d_3.play("WalkRight")
+		animated_sprite_2d.flip_h = true
 		grid_diff.x -= 1
 	elif (grid_diff.x < 0):
 		direction = Vector2(-1, 0)
+		animated_sprite_2d.play("WalkSides")
+		sprite_2d_2.play("WalkLeft")
+		sprite_2d_3.play("WalkLeft")
+		animated_sprite_2d.flip_h = false
 		grid_diff.x += 1
 		
 	if (direction != Vector2.ZERO):

@@ -1,7 +1,9 @@
 extends Area2D
 
+@export var tilemap: TileMapLayer
 @export var is_enemy = true
 @export var power_level = 10
+@export var starting_pos: Vector2
 var basic_power = 10
 @export var fight_speed: float = 0.001
 @onready var power: Label = $power
@@ -11,6 +13,7 @@ var basic_power = 10
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	power.text = str(power_level)
+	global_position = tilemap.map_to_local(starting_pos)
 	pass # Replace with function body.
 
 
