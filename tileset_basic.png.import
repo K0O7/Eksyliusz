@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6mhnphkav4bx"
-path="res://.godot/imported/goose_o.png-c000bca73958b0376eefcddb109a86f4.ctex"
+uid="uid://cy3e52rg6ye18"
+path="res://.godot/imported/tileset_basic.png-e7e8734a14d55b9a30ca385beaacfd0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cyberiada Audio FX/SFX/Walk/goose_o.png"
-dest_files=["res://.godot/imported/goose_o.png-c000bca73958b0376eefcddb109a86f4.ctex"]
+source_file="res://tileset_basic.png"
+dest_files=["res://.godot/imported/tileset_basic.png-e7e8734a14d55b9a30ca385beaacfd0f.ctex"]
 
 [params]
 

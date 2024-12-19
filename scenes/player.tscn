@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwesua3ct70k0"]
+[gd_scene load_steps=5 format=3 uid="uid://bwesua3ct70k0"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_tv2mo"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_tv2mo"]
 [ext_resource type="Texture2D" uid="uid://cyspyfgxe1t6v" path="res://icon.svg" id="2_eui73"]
+[ext_resource type="PackedScene" uid="uid://cdcrxuv3omup8" path="res://scenes/pause_menu.tscn" id="3_1burj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmn1p"]
 size = Vector2(26, 26)
@@ -12,6 +13,8 @@ speed = 100
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(10, 10)
+
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource("3_1burj")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pmn1p")

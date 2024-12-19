@@ -19,8 +19,7 @@ var music_sfx_names = {
 var walking_sfx = [
 	preload("res://Cyberiada Audio FX/SFX/Walk/walk-1.mp3"),
 	preload("res://Cyberiada Audio FX/SFX/Walk/walk-2.mp3"),
-	preload("res://Cyberiada Audio FX/SFX/Walk/walk-3.mp3"),
-	preload("res://Cyberiada Audio FX/SFX/Walk/walk-4.mp3")
+	preload("res://Cyberiada Audio FX/SFX/Walk/walk-3.mp3")
 ]
 
 var is_movement_running = false
@@ -97,6 +96,7 @@ func random_movement_sfx():
 	asp.play()
 	
 	await asp.finished
+	await get_tree().create_timer(0.1).timeout 
 	asp.queue_free()
 	is_movement_running = false
 
