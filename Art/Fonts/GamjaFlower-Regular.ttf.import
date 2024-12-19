@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://catlkii4d174k"
-path="res://.godot/imported/GamjaFlower-Regular.ttf-ad6a97322b1bef02229f85d232778dfe.fontdata"
+path="res://.godot/imported/GamjaFlower-Regular.ttf-fc6d851aedcf57a14da9bfad6ba5c7b8.fontdata"
 
 [deps]
 
-source_file="res://Art/Fonts/GamjaFlower-Regular.ttf"
-dest_files=["res://.godot/imported/GamjaFlower-Regular.ttf-ad6a97322b1bef02229f85d232778dfe.fontdata"]
+source_file="res://art/Fonts/GamjaFlower-Regular.ttf"
+dest_files=["res://.godot/imported/GamjaFlower-Regular.ttf-fc6d851aedcf57a14da9bfad6ba5c7b8.fontdata"]
 
 [params]
 
