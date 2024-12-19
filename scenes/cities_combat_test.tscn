@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://dxt175womyowm"]
+[gd_scene load_steps=9 format=4 uid="uid://cpgkr2q52uqvx"]
 
-[ext_resource type="Texture2D" uid="uid://4t22jbgdagv7" path="res://tileset_basic.png" id="1_doj02"]
-[ext_resource type="PackedScene" uid="uid://cbxfubm3cybl7" path="res://scenes/enemy_camp.tscn" id="2_1q5jm"]
-[ext_resource type="PackedScene" uid="uid://b0oqbu1axrjvd" path="res://scenes/player.tscn" id="2_y4dpp"]
+[ext_resource type="Texture2D" uid="uid://d33tvdvlfpyxp" path="res://tileset_basic.png" id="1_doj02"]
+[ext_resource type="PackedScene" path="res://scenes/enemy_camp.tscn" id="2_1q5jm"]
+[ext_resource type="PackedScene" uid="uid://bwesua3ct70k0" path="res://scenes/player.tscn" id="2_y4dpp"]
 [ext_resource type="Script" path="res://scripts/camera_control.gd" id="3_gia7v"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pdun5"]

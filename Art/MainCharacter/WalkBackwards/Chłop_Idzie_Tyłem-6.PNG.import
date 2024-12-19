@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkuqhieg6uigj"
-path="res://.godot/imported/Chłop_Idzie_Tyłem-6.PNG-dda2c79420aac87d5e87d6e6e040ade8.ctex"
+path="res://.godot/imported/Chłop_Idzie_Tyłem-6.PNG-43a3c7b9b23d69a8a84bc24d559c1656.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/MainCharacter/WalkBackwards/Chłop_Idzie_Tyłem-6.PNG"
-dest_files=["res://.godot/imported/Chłop_Idzie_Tyłem-6.PNG-dda2c79420aac87d5e87d6e6e040ade8.ctex"]
+source_file="res://Art/MainCharacter/WalkBackwards/Chłop_Idzie_Tyłem-6.PNG"
+dest_files=["res://.godot/imported/Chłop_Idzie_Tyłem-6.PNG-43a3c7b9b23d69a8a84bc24d559c1656.ctex"]
 
 [params]
 

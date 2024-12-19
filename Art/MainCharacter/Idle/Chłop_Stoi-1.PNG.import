@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://74lhawxe5skj"
-path="res://.godot/imported/Chłop_Stoi-1.PNG-97a98fe0ba4f87353c1e5fdb0a5be45a.ctex"
+path="res://.godot/imported/Chłop_Stoi-1.PNG-a545f69f6e94ef22df41ad69294139a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/MainCharacter/Idle/Chłop_Stoi-1.PNG"
-dest_files=["res://.godot/imported/Chłop_Stoi-1.PNG-97a98fe0ba4f87353c1e5fdb0a5be45a.ctex"]
+source_file="res://Art/MainCharacter/Idle/Chłop_Stoi-1.PNG"
+dest_files=["res://.godot/imported/Chłop_Stoi-1.PNG-a545f69f6e94ef22df41ad69294139a1.ctex"]
 
 [params]
 
