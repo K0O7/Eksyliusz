@@ -6,6 +6,9 @@ extends CharacterBody2D
 @export var acceleration: int
 @export var starting_pos: Vector2
 @export var power_level: int
+@onready var sprite_2d_3: Sprite2D = $Sprite2D3
+@onready var sprite_2d_2: Sprite2D = $Sprite2D2
+
 
 @onready var navig_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var power: Label = $power
@@ -89,4 +92,18 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		print("supp")
 		power_level += body.power_level
 		power.text = str(power_level)
+		units_sprites()
 		body.give_support()
+		
+
+func units_sprites():
+	sprite_2d_3.visible = false
+	sprite_2d_2.visible = false
+	
+	if self.power_level >= 200:
+		sprite_2d_2.visible = true
+	
+	if self.power_level >= 300:
+		sprite_2d_3.visible = true
+		sprite_2d_2.visible = true
+	
