@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfgbquyue5sqf"
-path="res://.godot/imported/Chłop_Idzie_W_Prawo-11.PNG-66b5a35ac38d28f72b9c6c5e4473095e.ctex"
+path="res://.godot/imported/Chłop_Idzie_W_Prawo-11.PNG-8b654964ecfd0c655d0a8f7d9a60b63a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/MainCharacter/WalkRight/Chłop_Idzie_W_Prawo-11.PNG"
-dest_files=["res://.godot/imported/Chłop_Idzie_W_Prawo-11.PNG-66b5a35ac38d28f72b9c6c5e4473095e.ctex"]
+source_file="res://art/MainCharacter/WalkRight/Chłop_Idzie_W_Prawo-11.PNG"
+dest_files=["res://.godot/imported/Chłop_Idzie_W_Prawo-11.PNG-8b654964ecfd0c655d0a8f7d9a60b63a.ctex"]
 
 [params]
 

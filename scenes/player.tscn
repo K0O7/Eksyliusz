@@ -1,27 +1,54 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwesua3ct70k0"]
+[gd_scene load_steps=5 format=3 uid="uid://b0oqbu1axrjvd"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_tv2mo"]
-[ext_resource type="Texture2D" uid="uid://cyspyfgxe1t6v" path="res://icon.svg" id="2_eui73"]
-[ext_resource type="PackedScene" uid="uid://cdcrxuv3omup8" path="res://scenes/pause_menu.tscn" id="3_1burj"]
+[ext_resource type="Texture2D" uid="uid://74lhawxe5skj" path="res://art/MainCharacter/Idle/Chłop_Stoi-1.PNG" id="2_wlkjr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmn1p"]
 size = Vector2(26, 26)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1hu7"]
+size = Vector2(42, 40)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_tv2mo")
 speed = 100
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(10, 10)
-
-[node name="PauseMenu" parent="Camera2D" instance=ExtResource("3_1burj")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pmn1p")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_eui73")
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-14, -12)
+scale = Vector2(0.024, 0.018)
+texture = ExtResource("2_wlkjr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(16, -14)
+scale = Vector2(0.025, 0.019)
+texture = ExtResource("2_wlkjr")
+
+[node name="Sprite2D1" type="Sprite2D" parent="."]
+position = Vector2(1.52588e-05, 0.999985)
+scale = Vector2(0.058, 0.046)
+texture = ExtResource("2_wlkjr")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_o1hu7")
+
+[node name="power" type="Label" parent="."]
+offset_left = -23.0
+offset_top = -31.0
+offset_right = 23.0
+offset_bottom = -8.0
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

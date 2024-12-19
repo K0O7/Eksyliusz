@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0scbwy7q6gdv"
-path="res://.godot/imported/Grafika_bez_nazwy-5.PNG-ebc995a5c38f2a59c431a293dcd3f1d3.ctex"
+path="res://.godot/imported/Grafika_bez_nazwy-5.PNG-fe400efc9bacd27520ac4af463124b27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/MainCharacter/WalkDown/Grafika_bez_nazwy-5.PNG"
-dest_files=["res://.godot/imported/Grafika_bez_nazwy-5.PNG-ebc995a5c38f2a59c431a293dcd3f1d3.ctex"]
+source_file="res://art/MainCharacter/WalkDown/Grafika_bez_nazwy-5.PNG"
+dest_files=["res://.godot/imported/Grafika_bez_nazwy-5.PNG-fe400efc9bacd27520ac4af463124b27.ctex"]
 
 [params]
 

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbxfubm3cybl7"]
+
+[ext_resource type="Script" path="res://scripts/enemy_camp.gd" id="1_njo6u"]
+[ext_resource type="PackedScene" uid="uid://b4ryullhmy4ql" path="res://scenes/entity_spawner.tscn" id="2_68p1t"]
+[ext_resource type="Texture2D" uid="uid://driq66hogh5t3" path="res://art/MainCharacter/WalkBackwards/Chłop_Idzie_Tyłem-5.PNG" id="3_c7us7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5kuu"]
+size = Vector2(28, 27)
+
+[node name="enemy_camp" type="Area2D" groups=["attackable"]]
+script = ExtResource("1_njo6u")
+
+[node name="entity_spawner" parent="." instance=ExtResource("2_68p1t")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_x5kuu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.5, -5.96046e-08)
+scale = Vector2(0.0313448, 0.0331886)
+texture = ExtResource("3_c7us7")
+
+[node name="power" type="Label" parent="."]
+offset_left = -18.0
+offset_top = -25.0
+offset_right = 19.0
+offset_bottom = -2.0
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
