@@ -35,7 +35,6 @@ func _input(event):
 
 func _physics_process(delta):
 	var is_close_to_curr_cell = adjus_to_cell + (tilemap.map_to_local(curr_pos + direction)) - global_position
-	print(is_close_to_curr_cell, global_position)
 	if (!is_moving && grid_diff == Vector2.ZERO):
 		velocity = Vector2.ZERO
 		direction = Vector2.ZERO
@@ -47,7 +46,8 @@ func _physics_process(delta):
 		curr_pos = curr_pos + direction
 		global_position = tilemap.map_to_local(curr_pos)
 		set_next_cell_sign.emit()
-		
+	
+	AudioPlayer.random_movement_sfx()
 	velocity = velocity.lerp(speed * direction, acceleration * delta)
 	
 	move_and_slide()
@@ -69,5 +69,4 @@ func set_next_cell():
 		
 	if (direction != Vector2.ZERO):
 		navig_agent.target_position = adjus_to_cell + to_global(tilemap.map_to_local(curr_pos + direction)) 
-		print(direction)
 		is_moving = true

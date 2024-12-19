@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b5t8cukjb5h21"
+path="res://.godot/imported/enemy-1.mp3-45c7de8befb3511d4647777434efd6b8.mp3str"
+
+[deps]
+
+source_file="res://Cyberiada Audio FX/SFX/Enemy/enemy-1.mp3"
+dest_files=["res://.godot/imported/enemy-1.mp3-45c7de8befb3511d4647777434efd6b8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
