@@ -32,5 +32,14 @@ func camp_is_attacked(player: CharacterBody2D):
 			self.power_level = self.basic_power
 			self.power.text = str(self.power_level)
 			self.is_enemy = false
+			GameManager.castle_taken.emit()
 			entity_spawner.start = true
-	pass
+	else:
+		while(player.power_level > 0 and self.power_level > 0):
+			player.power_level -= 1
+			self.power_level -= 1
+			self.power.text = str(self.power_level)
+			player.power.text = str(player.power_level)
+			player.units_sprites()
+			await get_tree().create_timer(fight_speed).timeout
+		GameManager.player_lose.emit()

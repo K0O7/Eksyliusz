@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbxfubm3cybl7"]
+[gd_scene load_steps=5 format=3 uid="uid://dr5rocmd3d0wy"]
 
 [ext_resource type="Script" path="res://scripts/enemy_camp.gd" id="1_njo6u"]
 [ext_resource type="PackedScene" uid="uid://b4ryullhmy4ql" path="res://scenes/entity_spawner.tscn" id="2_68p1t"]
-[ext_resource type="Texture2D" uid="uid://driq66hogh5t3" path="res://art/MainCharacter/WalkBackwards/Chłop_Idzie_Tyłem-5.PNG" id="3_c7us7"]
+[ext_resource type="Texture2D" uid="uid://driq66hogh5t3" path="res://Art/MainCharacter/WalkBackwards/Chłop_Idzie_Tyłem-5.PNG" id="3_c7us7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5kuu"]
 size = Vector2(28, 27)
 
 [node name="enemy_camp" type="Area2D" groups=["attackable"]]
 script = ExtResource("1_njo6u")
+power_level = 200
 
 [node name="entity_spawner" parent="." instance=ExtResource("2_68p1t")]
 

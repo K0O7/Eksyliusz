@@ -97,7 +97,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func units_sprites():
 	sprite_2d_3.visible = false
 	sprite_2d_2.visible = false
-	
+		
+		
 	if self.power_level >= 200:
 		sprite_2d_2.visible = true
 	
