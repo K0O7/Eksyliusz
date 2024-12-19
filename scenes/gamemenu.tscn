@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://hjuxrulef5h"]
+[gd_scene load_steps=6 format=3 uid="uid://btncobu5iasdp"]
 
-[ext_resource type="Script" path="res://scripts/gamemenu.gd" id="1_q4qta"]
-[ext_resource type="PackedScene" uid="uid://bsiev1nkmvlu5" path="res://scenes/node_2d.tscn" id="2_wxy64"]
+[ext_resource type="Script" path="res://scripts/gamemenu.gd" id="1_pk3uo"]
+[ext_resource type="PackedScene" uid="uid://b4ryullhmy4ql" path="res://scenes/entity_spawner.tscn" id="2_4sx3n"]
+[ext_resource type="AudioStream" uid="uid://1rcyi6hlcal6" path="res://sounds/sound.wav" id="3_cva6d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5jhv8"]
 
@@ -14,8 +15,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_q4qta")
-game_scene = ExtResource("2_wxy64")
+script = ExtResource("1_pk3uo")
+game_scene = ExtResource("2_4sx3n")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -33,6 +34,7 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 
 [node name="menu" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -41,7 +43,7 @@ material = SubResource("ShaderMaterial_5jhv8")
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 100
-text = "Eksyliusz: The Fall"
+text = "Platformer"
 
 [node name="Start" type="Button" parent="MarginContainer/HBoxContainer/menu"]
 material = SubResource("ShaderMaterial_cr0a7")
@@ -130,7 +132,6 @@ size_flags_horizontal = 4
 text = "back"
 
 [node name="about" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -164,6 +165,14 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "back"
+
+[node name="musicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_cva6d")
+bus = &"music"
+
+[node name="sampleSFXPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_cva6d")
+bus = &"sfx"
 
 [connection signal="value_changed" from="MarginContainer/HBoxContainer/settings/musicVol" to="." method="_on_music_vol_value_changed"]
 [connection signal="value_changed" from="MarginContainer/HBoxContainer/settings/sfxVol" to="." method="_on_sfx_vol_value_changed"]

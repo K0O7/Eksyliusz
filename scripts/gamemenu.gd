@@ -9,7 +9,6 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	AudioPlayer.play_music("main_menu")
 	for element in menu_buttons.get_children():
 		if element is Button:
 			element.pressed.connect(menu.bind(element.name))
@@ -23,7 +22,6 @@ func _process(delta: float) -> void:
 func menu(menu_elem):
 	match(menu_elem):
 		"Start":
-			AudioPlayer.change_scene(game_scene.resource_name)
 			get_tree().change_scene_to_packed(game_scene)
 			
 			#SceneTransition.change_scene(game_scene)
