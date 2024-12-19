@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
+class_name Player
 @export var tilemap: TileMapLayer
 @export var cell_size: int
 @export var speed: int
 @export var acceleration: int
 @export var starting_pos: Vector2
 @export var power_level: int
+@export var is_active: bool = false
 @onready var sprite_2d_3: Sprite2D = $Sprite2D3
 @onready var sprite_2d_2: Sprite2D = $Sprite2D2
 
@@ -30,13 +32,23 @@ func _ready():
 
 
 func _input(event):
-	if Input.is_action_just_pressed("LMB_click"):
-		target_pos = tilemap.local_to_map(get_global_mouse_position())
-		curr_pos = tilemap.local_to_map(global_position)
-		grid_diff = target_pos - curr_pos
-		
-		set_next_cell_sign.emit()
-		to_global(tilemap.map_to_local(target_pos))
+	if is_active:
+		if Input.is_action_just_pressed("LMB_click"):
+			target_pos = tilemap.local_to_map(get_global_mouse_position())
+			curr_pos = tilemap.local_to_map(global_position)
+			grid_diff = target_pos - curr_pos
+			
+			set_next_cell_sign.emit()
+			to_global(tilemap.map_to_local(target_pos))
+
+	if Input.is_action_just_pressed("control_squad_one"):
+		is_active = false
+		if name == "Player":
+			is_active = true
+	elif Input.is_action_just_pressed("control_squad_two"):
+		is_active = false
+		if name == "Player2":
+			is_active = true
 
 
 func _physics_process(delta):

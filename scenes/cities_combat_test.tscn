@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://cpgkr2q52uqvx"]
+[gd_scene load_steps=10 format=4 uid="uid://dxt175womyowm"]
 
 [ext_resource type="Texture2D" uid="uid://d33tvdvlfpyxp" path="res://tileset_basic.png" id="1_doj02"]
-[ext_resource type="PackedScene" path="res://scenes/enemy_camp.tscn" id="2_1q5jm"]
-[ext_resource type="PackedScene" uid="uid://bwesua3ct70k0" path="res://scenes/player.tscn" id="2_y4dpp"]
+[ext_resource type="PackedScene" uid="uid://cbxfubm3cybl7" path="res://scenes/enemy_camp.tscn" id="2_1q5jm"]
+[ext_resource type="PackedScene" uid="uid://b0oqbu1axrjvd" path="res://scenes/player.tscn" id="2_y4dpp"]
 [ext_resource type="Script" path="res://scripts/camera_control.gd" id="3_gia7v"]
+[ext_resource type="PackedScene" uid="uid://dkc5jukl54i8i" path="res://scenes/player2.tscn" id="4_awwqp"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pdun5"]
 vertices = PackedVector2Array(-326, 10, -326, -26, 401.461, -191.82, 421.508, 238.82, -342, -26, -342, -42, -358, -42, -358, -58, -374, -58, -374, -90, -390, -90, -390, -106, -426, -106, -426, -90, -442, -90, -535.039, -175.172, -442, -74, -458, -74, -458, -58, -474, -58, -474, -42, -490, -42, -490, -26, -506, -26, -506, 10, -474, 10, -474, 122, -536.953, 223.156, -358, 122, -358, 10)
@@ -97,6 +98,15 @@ cell_size = 8
 speed = 30
 acceleration = 100
 power_level = 100
+is_active = true
+
+[node name="Player2" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("4_awwqp")]
+scale = Vector2(0.3, 0.3)
+tilemap = NodePath("../NavigationRegion2D/TileMapLayer")
+cell_size = 8
+speed = 30
+acceleration = 100
+starting_pos = Vector2(-0.03, 3)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4.41, 4.41)
