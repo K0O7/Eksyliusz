@@ -20,6 +20,7 @@ boot_splash/minimum_display_time=1200
 [autoload]
 
 AudioPlayer="*res://scripts/audio_player.gd"
+GameManager="*res://scripts/game_manager.gd"
 
 [dotnet]
 
