@@ -8,7 +8,11 @@ extends CharacterBody2D
 @onready var navig_agent: NavigationAgent2D = $navig_agent
 
 func _ready() -> void:
-	target = get_tree().get_first_node_in_group("player")
+	var player_list = [get_tree().get_first_node_in_group("player"), get_tree().get_first_node_in_group("player2")]	
+	if player_list[0].is_active:
+		target = player_list[0]
+	else:
+		target = player_list[1]
 	navig_agent.target_position = target.global_position
 	power.text = str(power_level)
 

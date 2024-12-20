@@ -108,24 +108,25 @@ script = ExtResource("4_y68nb")
 
 [node name="enemy_camp" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("2_d4mdb")]
 tilemap = NodePath("../NavigationRegion2D/TileMapLayer")
-power_level = 20
+power_level = 10
 starting_pos = Vector2(-2, 3)
 
 [node name="enemy_camp2" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("2_d4mdb")]
 tilemap = NodePath("../NavigationRegion2D/TileMapLayer")
-power_level = 40
+power_level = 10
 starting_pos = Vector2(4, 4)
 
 [node name="enemy_camp3" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("2_d4mdb")]
 tilemap = NodePath("../NavigationRegion2D/TileMapLayer")
-power_level = 60
+power_level = 10
 starting_pos = Vector2(2, 3)
 
 [node name="enemy_camp4" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("2_d4mdb")]
 tilemap = NodePath("../NavigationRegion2D/TileMapLayer")
-power_level = 100
+power_level = 10
 starting_pos = Vector2(5, 7)
 
 [node name="enemy_camp5" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("2_d4mdb")]
 tilemap = NodePath("../NavigationRegion2D/TileMapLayer")
+power_level = 10
 starting_pos = Vector2(-4, -3)

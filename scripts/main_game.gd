@@ -4,7 +4,7 @@ extends Node2D
 @export var end_scene: PackedScene
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	AudioPlayer.play_music("game")
+	#AudioPlayer.play_music("game")
 	GameManager.player_win.connect(player_win)
 	GameManager.player_lose.connect(player_lose)
 

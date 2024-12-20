@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 	
 
 func camp_is_attacked(player: CharacterBody2D):
+	AudioPlayer.play_sfx("town_alarm", 4)
 	if player.power_level > self.power_level:
 		while(player.power_level > 0 and self.power_level > 0):
 			player.power_level -= 1
@@ -37,6 +38,7 @@ func camp_is_attacked(player: CharacterBody2D):
 			self.is_enemy = false
 			GameManager.castle_taken.emit()
 			entity_spawner.start = true
+			AudioPlayer.play_sfx("town_capture", 1)
 	else:
 		while(player.power_level > 0 and self.power_level > 0):
 			player.power_level -= 1

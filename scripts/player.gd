@@ -1,15 +1,16 @@
 extends CharacterBody2D
 
+class_name Player
 @export var tilemap: TileMapLayer
 @export var cell_size: int
 @export var speed: int
 @export var acceleration: int
 @export var starting_pos: Vector2
 @export var power_level: int
-@onready var sprite_2d_3: AnimatedSprite2D = $Sprite2D3
-@onready var sprite_2d_2: AnimatedSprite2D = $Sprite2D2
-@onready var animated_sprite_2d: AnimatedSprite2D= $AnimatedSprite2D
-
+@onready var sprite_2d_3: AnimatedSprite2D = $Villager1
+@onready var sprite_2d_2: AnimatedSprite2D = $Villager2
+@export var animated_sprite_2d: AnimatedSprite2D
+@export var is_active: bool = false
 
 
 @onready var navig_agent: NavigationAgent2D = $NavigationAgent2D
@@ -32,16 +33,28 @@ func _ready():
 
 
 func _input(event):
-	if Input.is_action_just_pressed("LMB_click"):
-		target_pos = tilemap.local_to_map(get_global_mouse_position())
-		curr_pos = tilemap.local_to_map(global_position)
-		grid_diff = target_pos - curr_pos
-		
-		set_next_cell_sign.emit()
-		to_global(tilemap.map_to_local(target_pos))
+	if is_active:
+		if Input.is_action_just_pressed("LMB_click"):
+			target_pos = tilemap.local_to_map(get_global_mouse_position())
+			curr_pos = tilemap.local_to_map(global_position)
+			grid_diff = target_pos - curr_pos
+			
+			set_next_cell_sign.emit()
+			to_global(tilemap.map_to_local(target_pos))
+
+	if Input.is_action_just_pressed("control_squad_one"):
+		is_active = false
+		if name == "Player":
+			is_active = true
+	elif Input.is_action_just_pressed("control_squad_two"):
+		is_active = false
+		if name == "Player2":
+			is_active = true
 
 
 func _physics_process(delta):
+	make_minions_sound()
+	make_yippie_sound()
 	var is_close_to_curr_cell = adjus_to_cell + (tilemap.map_to_local(curr_pos + direction)) - global_position
 	if (!is_moving && grid_diff == Vector2.ZERO):
 		velocity = Vector2.ZERO
@@ -125,3 +138,27 @@ func units_sprites():
 		sprite_2d_3.visible = true
 		sprite_2d_2.visible = true
 	
+
+func make_minions_sound():
+	var count = 1
+	
+	if (sprite_2d_2.visible):
+		count += 1
+		
+	if (sprite_2d_3.visible):
+		count += 1
+		
+	AudioPlayer.random_minion_sfx(count)
+
+
+func make_yippie_sound():
+	var count = 1
+	
+	if (sprite_2d_2.visible):
+		count += 1
+		
+	if (sprite_2d_3.visible):
+		count += 1
+	
+	await get_tree().create_timer(2).timeout
+	AudioPlayer.random_yippie_sfx(count)

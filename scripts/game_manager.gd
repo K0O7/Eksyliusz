@@ -1,6 +1,7 @@
 extends Node
 
 var castle_count: int = 0
+var control_squad_one = true
 
 signal castle_taken
 signal player_win

@@ -623,14 +623,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1hu7"]
 size = Vector2(42, 40)
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite_2d") groups=["player"]]
 script = ExtResource("1_tv2mo")
 speed = 100
+animated_sprite_2d = NodePath("MainCharacter")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pmn1p")
 
-[node name="Sprite2D3" type="AnimatedSprite2D" parent="."]
+[node name="Villager1" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(-28, -14)
 scale = Vector2(0.05, 0.05)
@@ -638,7 +639,7 @@ sprite_frames = SubResource("SpriteFrames_5mlv5")
 animation = &"WalkDown"
 autoplay = "Idle"
 
-[node name="Sprite2D2" type="AnimatedSprite2D" parent="."]
+[node name="Villager2" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(28, -14)
 scale = Vector2(0.05, 0.05)
@@ -646,7 +647,7 @@ sprite_frames = SubResource("SpriteFrames_jid08")
 animation = &"Idle"
 autoplay = "Idle"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="MainCharacter" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_m6d6q")
 animation = &"Idle"

@@ -1,7 +1,8 @@
 extends Node
 
 var sfx = {
-	#"door_open": preload("res://Audio/door_open.mp3"),
+	"town_alarm": preload("res://Cyberiada Audio FX/SFX/Town/town-alarm.mp3"),
+	"town_capture": preload("res://Cyberiada Audio FX/SFX/Town/town-capture.mp3")
 }
 
 var timed_sfx = {
@@ -22,8 +23,28 @@ var walking_sfx = [
 	preload("res://Cyberiada Audio FX/SFX/Walk/walk-3.mp3")
 ]
 
+var minion_sfx = [
+	preload("res://Cyberiada Audio FX/SFX/Minion/minion-1.mp3"),
+	preload("res://Cyberiada Audio FX/SFX/Minion/minion-2.mp3"),
+	preload("res://Cyberiada Audio FX/SFX/Minion/minion-3.mp3"),
+	preload("res://Cyberiada Audio FX/SFX/Minion/minion-4.mp3")
+]
+
+var town_spawn_sfx = [
+	preload("res://Cyberiada Audio FX/SFX/Town/town-spawn-1.mp3"),
+	preload("res://Cyberiada Audio FX/SFX/Town/town-spawn-2.mp3")
+]
+
+var minion_yippie_sfx = [
+	preload("res://Cyberiada Audio FX/SFX/Minion/minion-yippie-1.mp3"),
+	preload("res://Cyberiada Audio FX/SFX/Minion/minion-yippie-2.mp3"),
+	preload("res://Cyberiada Audio FX/SFX/Minion/minion-yippie-3.mp3")
+]
+
 var is_movement_running = false
 var is_clicked_sound = false
+var is_minion_talking = false
+var is_yippie_talking = false
 
 #func _input(event):
 	#if event is InputEventMouseButton && event.pressed && !is_clicked_sound:
@@ -51,11 +72,12 @@ func play_music(music_name: String):
 		asp.play()
 
 
-func play_sfx(sfx_name: String):
+func play_sfx(sfx_name: String, pitch_scale: float = 1):
 	if sfx.has(sfx_name):
 		var asp = AudioStreamPlayer.new()
 		asp.stream = sfx[sfx_name]
 		asp.name = "SFX"
+		asp.pitch_scale = pitch_scale
 		asp = add_to_bus(asp, sfx_name)
 		
 		add_child(asp)
@@ -90,7 +112,7 @@ func random_movement_sfx():
 	var asp = AudioStreamPlayer.new()
 	asp.stream = walking_sfx[randi() % walking_sfx.size()]
 	asp.name = "Movement_SFX"
-	asp = add_to_bus(asp)
+	asp = add_to_bus(asp, "sfx")
 	
 	add_child(asp)
 	asp.play()
@@ -99,6 +121,71 @@ func random_movement_sfx():
 	await get_tree().create_timer(0.1).timeout 
 	asp.queue_free()
 	is_movement_running = false
+	
+
+func random_minion_sfx(counter: int):
+	if is_minion_talking:
+		return
+	
+	is_minion_talking = true
+	var minion_sfx_list = []
+	for i in range(counter):
+		var asp = AudioStreamPlayer.new()
+		asp.stream = minion_sfx[randi() % minion_sfx.size()]
+		asp.name = "Minion_SFX"
+		asp = add_to_bus(asp, "sfx")
+		minion_sfx_list.append(asp)
+	
+		add_child(asp)
+		asp.play()
+	
+	for i in range(minion_sfx_list.size()):
+		await minion_sfx_list[i].finished
+		minion_sfx_list[i].queue_free()
+		
+	await get_tree().create_timer(6).timeout
+		
+	is_minion_talking = false
+	
+
+func random_yippie_sfx(counter: int):
+	if is_yippie_talking:
+		return
+	
+	is_yippie_talking = true
+	var minion_sfx_list = []
+	for i in range(counter):
+		var asp = AudioStreamPlayer.new()
+		asp.stream = minion_yippie_sfx[randi() % minion_yippie_sfx.size()]
+		asp.name = "Minion_SFX"
+		asp = add_to_bus(asp, "sfx")
+		minion_sfx_list.append(asp)
+	
+		add_child(asp)
+		asp.play()
+	
+	for i in range(minion_sfx_list.size()):
+		await minion_sfx_list[i].finished
+		minion_sfx_list[i].queue_free()
+		
+	await get_tree().create_timer(15).timeout
+		
+	is_yippie_talking = false
+	
+	
+func random_spawn_sfx():
+	var asp = AudioStreamPlayer.new()
+	asp.stream = town_spawn_sfx[randi() % town_spawn_sfx.size()]
+	asp.pitch_scale = 8
+	asp.name = "Spawn_SFX"
+	asp = add_to_bus(asp, "sfx")
+	
+	add_child(asp)
+	asp.play()
+	
+	await asp.finished
+	asp.queue_free()
+
 
 #func player_dead():
 	#for child in get_children():
