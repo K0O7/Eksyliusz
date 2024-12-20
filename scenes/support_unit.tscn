@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dn7lu6n6tqu0r"]
 
 [ext_resource type="Script" path="res://scripts/support_unit.gd" id="1_o6vht"]
-[ext_resource type="Texture2D" uid="uid://74lhawxe5skj" path="res://art/MainCharacter/Idle/Chłop_Stoi-1.PNG" id="2_iq4lg"]
+[ext_resource type="Texture2D" uid="uid://74lhawxe5skj" path="res://Art/Villager/Idle/Chłop_Stoi-1.PNG" id="2_iq4lg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mvt6"]
 size = Vector2(12.5, 14)

@@ -10,6 +10,14 @@ default_font = ExtResource("3_ssx6d")
 [node name="ScrollingNews" type="CanvasLayer"]
 script = ExtResource("1_qtq43")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="appear_scroll_timer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,7 +27,8 @@ grow_vertical = 2
 texture = ExtResource("2_cilra")
 expand_mode = 1
 
-[node name="newsScroll" type="ScrollContainer" parent="."]
+[node name="newsScroll" type="ScrollContainer" parent="TextureRect"]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -36,14 +45,11 @@ follow_focus = true
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 
-[node name="Label" type="Label" parent="newsScroll"]
+[node name="Label" type="Label" parent="TextureRect/newsScroll"]
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 
-[node name="Timer" type="Timer" parent="newsScroll"]
-wait_time = 10.0
-autostart = true
-
-[connection signal="timeout" from="newsScroll/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="appear_scroll_timer" to="." method="_on_appear_scroll_timer_timeout"]
