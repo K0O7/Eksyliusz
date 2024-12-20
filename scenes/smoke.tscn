@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqo7cnn1b7epi"]
+
+[ext_resource type="Texture2D" uid="uid://chhy2kg5qpr6e" path="res://Art/FightSmoke/Grafika_bez_nazwy-1.PNG" id="1_exewk"]
+[ext_resource type="Texture2D" uid="uid://bgoflowbxypdj" path="res://Art/FightSmoke/Grafika_bez_nazwy-2.PNG" id="2_iepn1"]
+[ext_resource type="Texture2D" uid="uid://btgoub8yvj747" path="res://Art/FightSmoke/Grafika_bez_nazwy-3.PNG" id="3_dv1ha"]
+[ext_resource type="Texture2D" uid="uid://ifwyjjndlufq" path="res://Art/FightSmoke/Grafika_bez_nazwy-4.PNG" id="4_hs7fw"]
+[ext_resource type="Texture2D" uid="uid://dv5v7t8c7qopq" path="res://Art/FightSmoke/Grafika_bez_nazwy-5.PNG" id="5_wxfrs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ljek"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_exewk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iepn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dv1ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hs7fw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wxfrs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="Smoke" type="Node2D"]
+scale = Vector2(0.05, 0.05)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8ljek")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0

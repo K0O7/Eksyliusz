@@ -1,9 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://c73tm8t682w5"]
+[gd_scene load_steps=5 format=3 uid="uid://c73tm8t682w5"]
 
 [ext_resource type="Script" path="res://scripts/news_scroll.gd" id="1_qtq43"]
+[ext_resource type="Texture2D" uid="uid://1xlld71ca1tv" path="res://Art/UI/scroll news.png" id="2_cilra"]
+[ext_resource type="FontFile" uid="uid://catlkii4d174k" path="res://Art/Fonts/GamjaFlower-Regular.ttf" id="3_ssx6d"]
+
+[sub_resource type="Theme" id="Theme_eaaaf"]
+default_font = ExtResource("3_ssx6d")
 
 [node name="ScrollingNews" type="CanvasLayer"]
 script = ExtResource("1_qtq43")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cilra")
+expand_mode = 1
 
 [node name="newsScroll" type="ScrollContainer" parent="."]
 anchors_preset = 7
@@ -11,11 +25,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -544.0
-offset_top = -66.0
-offset_right = 544.0
+offset_left = -565.0
+offset_top = -82.0
+offset_right = 475.0
+offset_bottom = -46.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = SubResource("Theme_eaaaf")
 follow_focus = true
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
@@ -23,8 +39,11 @@ vertical_scroll_mode = 0
 [node name="Label" type="Label" parent="newsScroll"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="newsScroll"]
+wait_time = 10.0
 autostart = true
 
 [connection signal="timeout" from="newsScroll/Timer" to="." method="_on_timer_timeout"]

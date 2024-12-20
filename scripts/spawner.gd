@@ -6,6 +6,7 @@ extends Node2D
 @export var spawn_location_offset_X: int = 0
 @export var spawn_location_offset_Y: int = 0
 @export var entity_to_spawn: PackedScene
+@export var is_robot: bool = false
 var start: bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -21,7 +22,13 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	if start:
-		AudioPlayer.random_spawn_sfx()
-		var new_entity = entity_to_spawn.instantiate()
-		add_sibling(new_entity)
-		new_entity.global_position = global_position
+		if is_robot && randf() > 0.8:
+			var new_entity = entity_to_spawn.instantiate()
+			add_sibling(new_entity)
+			new_entity.global_position = global_position
+			
+		else:
+			AudioPlayer.random_spawn_sfx()
+			var new_entity = entity_to_spawn.instantiate()
+			add_sibling(new_entity)
+			new_entity.global_position = global_position

@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdcrxuv3omup8"]
+[gd_scene load_steps=6 format=3 uid="uid://cdcrxuv3omup8"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_vrpnq"]
+[ext_resource type="FontFile" uid="uid://catlkii4d174k" path="res://Art/Fonts/GamjaFlower-Regular.ttf" id="2_hqvtx"]
+[ext_resource type="Texture2D" uid="uid://cp1ts7dwtxmbf" path="res://Art/Buttons/button.png" id="3_gu1k7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aso6y"]
 
@@ -17,7 +19,6 @@ grow_vertical = 2
 script = ExtResource("1_vrpnq")
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,6 +49,7 @@ size_flags_horizontal = 3
 material = SubResource("ShaderMaterial_aso6y")
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_hqvtx")
 theme_override_font_sizes/font_size = 100
 text = "Pause"
 
@@ -57,8 +59,12 @@ custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("2_hqvtx")
 theme_override_font_sizes/font_size = 50
 text = "Resume"
+icon = ExtResource("3_gu1k7")
+flat = true
+icon_alignment = 1
 
 [node name="Settings" type="Button" parent="Panel/MarginContainer/HBoxContainer/menu"]
 material = SubResource("ShaderMaterial_0gbwd")
@@ -66,8 +72,12 @@ custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("2_hqvtx")
 theme_override_font_sizes/font_size = 50
 text = "Settings"
+icon = ExtResource("3_gu1k7")
+flat = true
+icon_alignment = 1
 
 [node name="Exit" type="Button" parent="Panel/MarginContainer/HBoxContainer/menu"]
 material = SubResource("ShaderMaterial_0gbwd")
@@ -75,9 +85,13 @@ custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("2_hqvtx")
 theme_override_font_sizes/font_size = 50
 text = "Exit
 "
+icon = ExtResource("3_gu1k7")
+flat = true
+icon_alignment = 1
 
 [node name="settings" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer"]
 visible = false
@@ -89,12 +103,14 @@ material = SubResource("ShaderMaterial_aso6y")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_hqvtx")
 theme_override_font_sizes/font_size = 100
 text = "Settings"
 
 [node name="MusicLabel" type="Label" parent="Panel/MarginContainer/HBoxContainer/settings"]
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_hqvtx")
 theme_override_font_sizes/font_size = 50
 text = "Music"
 horizontal_alignment = 1
@@ -110,6 +126,7 @@ value = 1.0
 [node name="SFXLabel" type="Label" parent="Panel/MarginContainer/HBoxContainer/settings"]
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_hqvtx")
 theme_override_font_sizes/font_size = 50
 text = "SFX"
 horizontal_alignment = 1
@@ -126,7 +143,12 @@ value = 1.0
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "back"
+theme_override_fonts/font = ExtResource("2_hqvtx")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+icon = ExtResource("3_gu1k7")
+flat = true
+icon_alignment = 1
 
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/menu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/menu/Settings" to="." method="_on_settings_pressed"]

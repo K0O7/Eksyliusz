@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://b3uue8rlo1faj"]
+[gd_scene load_steps=12 format=4 uid="uid://b3uue8rlo1faj"]
 
 [ext_resource type="Texture2D" uid="uid://d33tvdvlfpyxp" path="res://tileset_basic.png" id="1_bw2ao"]
 [ext_resource type="Script" path="res://scripts/main_game.gd" id="1_yfw3p"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dr5rocmd3d0wy" path="res://scenes/enemy_camp.tscn" id="2_d4mdb"]
 [ext_resource type="PackedScene" uid="uid://bwesua3ct70k0" path="res://scenes/player.tscn" id="3_2d7sq"]
 [ext_resource type="Script" path="res://scripts/camera_control.gd" id="4_y68nb"]
+[ext_resource type="PackedScene" uid="uid://bqo7cnn1b7epi" path="res://scenes/smoke.tscn" id="6_gmmtn"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pdun5"]
 vertices = PackedVector2Array(-326, 10, -326, -26, 401.461, -191.82, 421.508, 238.82, -342, -26, -342, -42, -358, -42, -358, -58, -374, -58, -374, -90, -390, -90, -390, -106, -426, -106, -426, -90, -442, -90, -535.039, -175.172, -442, -74, -458, -74, -458, -58, -474, -58, -474, -42, -490, -42, -490, -26, -506, -26, -506, 10, -474, 10, -474, 122, -536.953, 223.156, -358, 122, -358, 10)
@@ -102,13 +103,15 @@ speed = 30
 acceleration = 100
 power_level = 100
 
+[node name="Smoke" parent="Player" instance=ExtResource("6_gmmtn")]
+visible = false
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4.41, 4.41)
 script = ExtResource("4_y68nb")
 
 [node name="enemy_camp" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("2_d4mdb")]
 tilemap = NodePath("../NavigationRegion2D/TileMapLayer")
-power_level = 10
 starting_pos = Vector2(-2, 3)
 
 [node name="enemy_camp2" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("2_d4mdb")]

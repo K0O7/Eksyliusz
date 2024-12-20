@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2eqsgeagiwa3"]
+
+[ext_resource type="Script" path="res://scripts/cursor.gd" id="1_gnrs8"]
+[ext_resource type="Texture2D" uid="uid://dqh3hd2pbmylt" path="res://Art/Coursor/myszka 1.png" id="1_pdblc"]
+[ext_resource type="Texture2D" uid="uid://50sdl3kwq38s" path="res://Art/Coursor/myszka 2.png" id="2_2pwsy"]
+[ext_resource type="Texture2D" uid="uid://t3hx2ut4ufvn" path="res://Art/Coursor/myszka 3.png" id="3_siu7k"]
+[ext_resource type="Texture2D" uid="uid://7yc48d060m22" path="res://Art/Coursor/myszka 4.png" id="4_jfqvu"]
+[ext_resource type="Texture2D" uid="uid://bac7b80pyng3d" path="res://Art/Coursor/myszka 5.png" id="5_wto6c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pssh8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pdblc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2pwsy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_siu7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jfqvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wto6c")
+}],
+"loop": false,
+"name": &"Click",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pdblc")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Cursor" type="AnimatedSprite2D"]
+position = Vector2(-1, 0)
+scale = Vector2(0.02, 0.02)
+sprite_frames = SubResource("SpriteFrames_pssh8")
+animation = &"Idle"
+offset = Vector2(600, 800)
+script = ExtResource("1_gnrs8")
