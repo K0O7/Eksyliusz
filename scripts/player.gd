@@ -56,7 +56,7 @@ func _physics_process(delta):
 	make_minions_sound()
 	make_yippie_sound()
 	var is_close_to_curr_cell = adjus_to_cell + (tilemap.map_to_local(curr_pos + direction)) - global_position
-	print(is_close_to_curr_cell)
+	#print(is_close_to_curr_cell)
 	if (!is_moving && grid_diff == Vector2.ZERO):
 		velocity = Vector2.ZERO
 		direction = Vector2.ZERO
@@ -125,7 +125,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		power.text = str(power_level)
 		units_sprites()
 		body.give_support()
-		
+	if body.is_in_group("attackable"):
+		grid_diff = Vector2.ZERO
+		body.camp_is_attacked(self)
+		print("stepped")
 
 func units_sprites():
 	sprite_2d_3.visible = false

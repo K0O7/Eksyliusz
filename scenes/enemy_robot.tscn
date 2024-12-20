@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://b7q4ek52ity0f"]
+[gd_scene load_steps=16 format=3 uid="uid://b7q4ek52ity0f"]
 
 [ext_resource type="Script" path="res://scripts/enemy_robot.gd" id="1_omao4"]
 [ext_resource type="Texture2D" uid="uid://d4ebomygrthy3" path="res://Art/Robot/Grafika_bez_nazwy-1.PNG" id="1_pucch"]
+[ext_resource type="PackedScene" uid="uid://bqo7cnn1b7epi" path="res://scenes/smoke.tscn" id="2_gq1en"]
 [ext_resource type="Texture2D" uid="uid://dvsx6w8ppn7q3" path="res://Art/Robot/Grafika_bez_nazwy-2.PNG" id="2_mkt2n"]
 [ext_resource type="Texture2D" uid="uid://b2um1k7o7vwof" path="res://Art/Robot/Grafika_bez_nazwy-3.PNG" id="3_rrfkj"]
 [ext_resource type="Texture2D" uid="uid://cvnbmyxlrc6pu" path="res://Art/Robot/Grafika_bez_nazwy-4.PNG" id="4_vcljh"]
@@ -54,8 +55,13 @@ animations = [{
 "speed": 7.0
 }]
 
-[node name="EnemyRobot" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bcm4w"]
+radius = 16.0
+height = 58.0
+
+[node name="EnemyRobot" type="CharacterBody2D" groups=["attackable"]]
 script = ExtResource("1_omao4")
+smoke = ExtResource("2_gq1en")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_cdagq")
@@ -68,3 +74,17 @@ autoplay = "Idle"
 frame_progress = 0.41504
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="power" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -36.0
+offset_right = 20.0
+offset_bottom = -13.0
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_bcm4w")
