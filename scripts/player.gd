@@ -127,7 +127,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		body.give_support()
 	if body.is_in_group("attackable"):
 		grid_diff = Vector2.ZERO
-		body.camp_is_attacked(self)
+		body.robot_is_attacked(self)
 		print("stepped")
 
 func units_sprites():

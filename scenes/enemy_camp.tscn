@@ -76,6 +76,7 @@ scale = Vector2(0.0313448, 0.0331886)
 texture = ExtResource("4_ybxxj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(3, -3)
 scale = Vector2(0.06, 0.06)
 sprite_frames = SubResource("SpriteFrames_s7y36")
@@ -98,6 +99,6 @@ vertical_alignment = 1
 position = Vector2(0, -100)
 
 [node name="entity_spawner" parent="RobotSpawner" instance=ExtResource("2_68p1t")]
-time_to_spawn = 80.0
+time_to_spawn = 20.0
 entity_to_spawn = ExtResource("4_igdnt")
 is_robot = true

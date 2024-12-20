@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var SPEED = 20.0
+@export var SPEED = 200.0
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @export var smoke: PackedScene
 @export var fight_speed: float = 0.001
@@ -19,7 +19,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-func camp_is_attacked(player: CharacterBody2D):
+func robot_is_attacked(player: CharacterBody2D):
 	AudioPlayer.play_sfx("town_alarm", 4)
 	var new_entity = smoke.instantiate()
 	add_sibling(new_entity)
@@ -52,3 +52,10 @@ func camp_is_attacked(player: CharacterBody2D):
 			await get_tree().create_timer(fight_speed).timeout
 		new_entity.queue_free()
 		GameManager.player_lose.emit()
+		
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("robot to castle")
+	if area.is_in_group("attackable") and not area.is_enemy:
+		SPEED = 0
+		area.camp_is_attacked_by_robot(self)
+		print("stepped")
