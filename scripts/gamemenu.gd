@@ -48,9 +48,7 @@ func _on_back_pressed() -> void:
 
 func _on_music_vol_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("music"), linear_to_db(value))
-	$musicPlayer.play()
 
 
 func _on_sfx_vol_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("sfx"), linear_to_db(value))
-	$sampleSFXPlayer.play()

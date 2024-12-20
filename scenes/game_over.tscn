@@ -1,0 +1,89 @@
+[gd_scene load_steps=16 format=3 uid="uid://hndpvyp44fc4"]
+
+[ext_resource type="Texture2D" uid="uid://cbkb2pb7wy83w" path="res://Art/GameOver/Grafika_bez_nazwy-1.PNG" id="1_oriv8"]
+[ext_resource type="Texture2D" uid="uid://yxtvunnn85tm" path="res://Art/GameOver/Grafika_bez_nazwy-2.PNG" id="2_lm4xb"]
+[ext_resource type="Texture2D" uid="uid://bt0fk4ww0m6y2" path="res://Art/GameOver/Grafika_bez_nazwy-3.PNG" id="3_gm0e6"]
+[ext_resource type="Texture2D" uid="uid://cvcsr3aqhsxrq" path="res://Art/GameOver/Grafika_bez_nazwy-4.PNG" id="4_agq1w"]
+[ext_resource type="Texture2D" uid="uid://cf5bjixl5qvcl" path="res://Art/GameOver/Grafika_bez_nazwy-5.PNG" id="5_k7g2x"]
+[ext_resource type="Texture2D" uid="uid://bnwdo5svm46nm" path="res://Art/GameOver/Grafika_bez_nazwy-6.PNG" id="6_6pq5f"]
+[ext_resource type="Texture2D" uid="uid://bijmvx5yr0mrm" path="res://Art/GameOver/Grafika_bez_nazwy-7.PNG" id="7_hqgif"]
+[ext_resource type="Texture2D" uid="uid://belegr6ienxrq" path="res://Art/GameOver/Grafika_bez_nazwy-8.PNG" id="8_ajplc"]
+[ext_resource type="Texture2D" uid="uid://c64ljdv68lapl" path="res://Art/GameOver/Grafika_bez_nazwy-9.PNG" id="9_n8dym"]
+[ext_resource type="Texture2D" uid="uid://3svjns0on6w2" path="res://Art/GameOver/Grafika_bez_nazwy-10.PNG" id="10_xhtu4"]
+[ext_resource type="Texture2D" uid="uid://df8ww7uyqygmr" path="res://Art/GameOver/Grafika_bez_nazwy-11.PNG" id="11_hcvy4"]
+[ext_resource type="Texture2D" uid="uid://b8btdfpdwb2dl" path="res://Art/GameOver/Grafika_bez_nazwy-12.PNG" id="12_tsv7u"]
+[ext_resource type="Texture2D" uid="uid://csmkxgbk0py3j" path="res://Art/GameOver/Grafika_bez_nazwy-13.PNG" id="13_gxpgc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j870w"]
+bg_color = Color(0, 0, 0, 0.882353)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ofng2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_oriv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lm4xb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gm0e6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_agq1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k7g2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6pq5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hqgif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ajplc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_n8dym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xhtu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hcvy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tsv7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gxpgc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j870w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(572, 317)
+scale = Vector2(0.245881, 0.245881)
+sprite_frames = SubResource("SpriteFrames_ofng2")
+autoplay = "default"
+frame_progress = 0.538961

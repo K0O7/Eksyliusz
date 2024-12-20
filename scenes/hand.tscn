@@ -63,4 +63,4 @@ animations = [{
 
 [node name="Hand" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_kpfxx")
-frame_progress = 0.817883
+frame_progress = 0.832987
