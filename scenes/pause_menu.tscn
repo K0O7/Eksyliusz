@@ -19,6 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_vrpnq")
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -59,8 +60,9 @@ custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
+theme_override_constants/icon_max_width = 200
 theme_override_fonts/font = ExtResource("2_hqvtx")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = "Resume"
 icon = ExtResource("3_gu1k7")
 flat = true
@@ -72,8 +74,9 @@ custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
+theme_override_constants/icon_max_width = 200
 theme_override_fonts/font = ExtResource("2_hqvtx")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = "Settings"
 icon = ExtResource("3_gu1k7")
 flat = true
@@ -85,8 +88,9 @@ custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
+theme_override_constants/icon_max_width = 200
 theme_override_fonts/font = ExtResource("2_hqvtx")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = "Exit
 "
 icon = ExtResource("3_gu1k7")
@@ -94,7 +98,6 @@ flat = true
 icon_alignment = 1
 
 [node name="settings" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 6
 
@@ -143,8 +146,9 @@ value = 1.0
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/icon_max_width = 200
 theme_override_fonts/font = ExtResource("2_hqvtx")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = "Back"
 icon = ExtResource("3_gu1k7")
 flat = true

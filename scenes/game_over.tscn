@@ -86,4 +86,4 @@ position = Vector2(572, 317)
 scale = Vector2(0.245881, 0.245881)
 sprite_frames = SubResource("SpriteFrames_ofng2")
 autoplay = "default"
-frame_progress = 0.538961
+frame_progress = 0.745399
