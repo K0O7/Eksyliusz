@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://hjuxrulef5h"]
+[gd_scene load_steps=9 format=3 uid="uid://hjuxrulef5h"]
 
 [ext_resource type="Script" path="res://scripts/gamemenu.gd" id="1_q4qta"]
 [ext_resource type="PackedScene" uid="uid://bsiev1nkmvlu5" path="res://scenes/node_2d.tscn" id="2_wxy64"]
 [ext_resource type="PackedScene" uid="uid://d2eqsgeagiwa3" path="res://scenes/cursor.tscn" id="3_fmxpb"]
 [ext_resource type="FontFile" uid="uid://catlkii4d174k" path="res://Art/Fonts/GamjaFlower-Regular.ttf" id="3_x58je"]
 [ext_resource type="Texture2D" uid="uid://cp1ts7dwtxmbf" path="res://Art/Buttons/button.png" id="4_8b3ls"]
+[ext_resource type="Texture2D" uid="uid://ucf1umpyqrrg" path="res://Art/Buttons/koło.png" id="5_spvk7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5jhv8"]
 
@@ -121,6 +122,9 @@ vertical_alignment = 1
 [node name="musicVol" type="HSlider" parent="MarginContainer/HBoxContainer/settings"]
 layout_mode = 2
 size_flags_vertical = 2
+theme_override_icons/grabber = ExtResource("5_spvk7")
+theme_override_icons/grabber_highlight = ExtResource("5_spvk7")
+theme_override_icons/grabber_disabled = ExtResource("5_spvk7")
 max_value = 1.0
 step = 0.05
 value = 1.0
@@ -137,6 +141,9 @@ vertical_alignment = 1
 [node name="sfxVol" type="HSlider" parent="MarginContainer/HBoxContainer/settings"]
 layout_mode = 2
 size_flags_vertical = 2
+theme_override_icons/grabber = ExtResource("5_spvk7")
+theme_override_icons/grabber_highlight = ExtResource("5_spvk7")
+theme_override_icons/grabber_disabled = ExtResource("5_spvk7")
 max_value = 1.0
 step = 0.05
 value = 1.0
