@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://bwesua3ct70k0"]
+[gd_scene load_steps=109 format=3 uid="uid://bwesua3ct70k0"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_tv2mo"]
 [ext_resource type="Texture2D" uid="uid://74lhawxe5skj" path="res://Art/Villager/Idle/Chłop_Stoi-1.PNG" id="2_wlkjr"]
@@ -102,6 +102,7 @@
 [ext_resource type="Texture2D" uid="uid://dpafj5hxffnmn" path="res://Art/MainCharacter/WalkUpwards/Main_Tył-16.PNG" id="43_pk51h"]
 [ext_resource type="Texture2D" uid="uid://cp158jldp5jjm" path="res://Art/Villager/WalkBackwards/Chłop_Idzie_Tyłem-7.PNG" id="44_sqyrn"]
 [ext_resource type="Texture2D" uid="uid://3o1l3r32b6af" path="res://Art/Villager/WalkBackwards/Chłop_Idzie_Tyłem-8.PNG" id="45_rs7r2"]
+[ext_resource type="FontFile" uid="uid://catlkii4d174k" path="res://Art/Fonts/GamjaFlower-Regular.ttf" id="103_ss6n7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmn1p"]
 size = Vector2(26, 26)
@@ -663,10 +664,14 @@ path_postprocessing = 1
 shape = SubResource("RectangleShape2D_o1hu7")
 
 [node name="power" type="Label" parent="."]
-offset_left = -23.0
-offset_top = -31.0
-offset_right = 23.0
-offset_bottom = -8.0
+offset_left = -26.0
+offset_top = -85.0
+offset_right = 26.0
+offset_bottom = -39.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("103_ss6n7")
+theme_override_font_sizes/font_size = 45
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1

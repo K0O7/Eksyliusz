@@ -9417,3 +9417,7 @@ scale = Vector2(0.2, 0.2)
 zoom = Vector2(0.1, 0.1)
 script = ExtResource("10_ppyc4")
 SPEED = 100
+left_limit = -5000
+right_limit = 30000
+top_limit = -6000
+bottom_limit = 20000

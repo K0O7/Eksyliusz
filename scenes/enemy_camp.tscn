@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dr5rocmd3d0wy"]
+[gd_scene load_steps=8 format=3 uid="uid://dr5rocmd3d0wy"]
 
 [ext_resource type="Script" path="res://scripts/enemy_camp.gd" id="1_njo6u"]
 [ext_resource type="PackedScene" uid="uid://bqo7cnn1b7epi" path="res://scenes/smoke.tscn" id="2_8o2nv"]
 [ext_resource type="PackedScene" uid="uid://b4ryullhmy4ql" path="res://scenes/entity_spawner.tscn" id="2_68p1t"]
 [ext_resource type="PackedScene" uid="uid://b7q4ek52ity0f" path="res://scenes/enemy_robot.tscn" id="4_igdnt"]
 [ext_resource type="Texture2D" uid="uid://d0emijy0vgeqt" path="res://Art/Enviro/IMG_1792.png" id="4_ybxxj"]
+[ext_resource type="FontFile" uid="uid://catlkii4d174k" path="res://Art/Fonts/GamjaFlower-Regular.ttf" id="5_4pixn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5kuu"]
 size = Vector2(28, 27)
@@ -28,9 +29,12 @@ texture = ExtResource("4_ybxxj")
 
 [node name="power" type="Label" parent="."]
 offset_left = -18.0
-offset_top = -25.0
+offset_top = -41.0
 offset_right = 19.0
-offset_bottom = -2.0
+offset_bottom = -18.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_4pixn")
+theme_override_font_sizes/font_size = 16
 text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
