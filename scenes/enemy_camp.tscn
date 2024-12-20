@@ -98,6 +98,5 @@ vertical_alignment = 1
 position = Vector2(0, -100)
 
 [node name="entity_spawner" parent="RobotSpawner" instance=ExtResource("2_68p1t")]
-time_to_spawn = 80.0
 entity_to_spawn = ExtResource("4_igdnt")
 is_robot = true
