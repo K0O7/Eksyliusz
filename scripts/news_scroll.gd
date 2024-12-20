@@ -1,8 +1,11 @@
 extends CanvasLayer
 
-@onready var news_scroll: ScrollContainer = $newsScroll
-@onready var timer: Timer = $newsScroll/Timer
-@onready var label: Label = $newsScroll/Label
+@onready var news_scroll: ScrollContainer = $TextureRect/newsScroll
+@onready var timer: Timer = $Timer
+@onready var appear_scroll_timer: Timer = $appear_scroll_timer
+@onready var label: Label = $TextureRect/newsScroll/Label
+@onready var texture_rect: TextureRect = $TextureRect
+
 var news_stories = ["X was sent to correction camp for pouring milk before cereal"
 , "X has been executed by 28 stabwoonds for hating on popular AAA game. King Eksyliush's comment: 'Now you know why this scene was tragic you uncultured critter'"
 , "X has been sentences to 'PUNISHMENT' for commiting 'CRIME'", "X has been sentenced to head shaving for waring buzz cut"
@@ -25,6 +28,8 @@ var just_changed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	texture_rect.visible = false
+	#appear_scroll_timer.start()
 	pass
 	#set_deferred("scroll_horizontal", 600)
 
@@ -37,7 +42,14 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	just_changed = false
+	texture_rect.visible = true
 	news_scroll.scroll_horizontal = 0
 	label.text = news_stories.pick_random()
-	await get_tree().create_timer(1.).timeout
+	appear_scroll_timer.start()
+	await get_tree().create_timer(2.).timeout
 	just_changed = true
+
+
+func _on_appear_scroll_timer_timeout() -> void:
+	texture_rect.visible = false
+	pass # Replace with function body.
