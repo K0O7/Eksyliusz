@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://hjuxrulef5h"]
 
 [ext_resource type="Script" path="res://scripts/gamemenu.gd" id="1_q4qta"]
-[ext_resource type="PackedScene" uid="uid://cxpxyvhtbpxld" path="res://scenes/level_main.tscn" id="2_6uxce"]
+[ext_resource type="PackedScene" uid="uid://b1kcwjankqxip" path="res://scenes/level_main.tscn" id="2_6uxce"]
 [ext_resource type="PackedScene" uid="uid://d2eqsgeagiwa3" path="res://scenes/cursor.tscn" id="3_fmxpb"]
 [ext_resource type="FontFile" uid="uid://catlkii4d174k" path="res://Art/Fonts/GamjaFlower-Regular.ttf" id="3_x58je"]
 [ext_resource type="Texture2D" uid="uid://cp1ts7dwtxmbf" path="res://Art/Buttons/button.png" id="4_8b3ls"]

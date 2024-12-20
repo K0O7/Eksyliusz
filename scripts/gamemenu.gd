@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 func menu(menu_elem):
 	match(menu_elem):
 		"Start":
-			AudioPlayer.change_scene(game_scene.resource_name)
+			AudioPlayer.change_scene("level_main")
 			get_tree().change_scene_to_packed(game_scene)
 			
 			#SceneTransition.change_scene(game_scene)

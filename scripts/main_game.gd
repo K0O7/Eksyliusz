@@ -13,15 +13,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
+"res://game_win.tscn"
 
 func player_win():
 	await get_tree().create_timer(1).timeout 
 	AudioPlayer.change_scene(win_scene.resource_name)
-	get_tree().change_scene_to_packed(win_scene)
+	get_tree().change_scene_to_file("res://game_win.tscn")
 
 
 func player_lose():
 	await get_tree().create_timer(1).timeout 
 	AudioPlayer.change_scene(lose_scene.resource_name)
-	get_tree().change_scene_to_packed(lose_scene)
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
