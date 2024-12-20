@@ -1,6 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://hndpvyp44fc4"]
+[gd_scene load_steps=18 format=3 uid="uid://hndpvyp44fc4"]
 
+[ext_resource type="Script" path="res://scripts/change_to_menu.gd" id="1_gwr1s"]
 [ext_resource type="Texture2D" uid="uid://cbkb2pb7wy83w" path="res://Art/GameOver/Grafika_bez_nazwy-1.PNG" id="1_oriv8"]
+[ext_resource type="PackedScene" uid="uid://hjuxrulef5h" path="res://scenes/game_menu.tscn" id="2_5yv8t"]
 [ext_resource type="Texture2D" uid="uid://yxtvunnn85tm" path="res://Art/GameOver/Grafika_bez_nazwy-2.PNG" id="2_lm4xb"]
 [ext_resource type="Texture2D" uid="uid://bt0fk4ww0m6y2" path="res://Art/GameOver/Grafika_bez_nazwy-3.PNG" id="3_gm0e6"]
 [ext_resource type="Texture2D" uid="uid://cvcsr3aqhsxrq" path="res://Art/GameOver/Grafika_bez_nazwy-4.PNG" id="4_agq1w"]
@@ -71,6 +73,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gwr1s")
+main_menu = ExtResource("2_5yv8t")
+is_loop = true
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

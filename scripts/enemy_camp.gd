@@ -45,7 +45,9 @@ func camp_is_attacked(player: CharacterBody2D):
 			self.power.text = str(self.power_level)
 			self.is_enemy = false
 			self.sprite2d.visible = false
+			$LightOccluder1.visible = false
 			self.sprite_anim.visible = true
+			$LightOccluder2D.visible = true
 			self.sprite_anim.play("default")
 			GameManager.castle_taken.emit()
 			entity_spawner.start = true

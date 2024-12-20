@@ -22,7 +22,7 @@ func _physics_process(delta):
 func robot_is_attacked(player: CharacterBody2D):
 	AudioPlayer.play_sfx("town_alarm", 4)
 	var new_entity = smoke.instantiate()
-	add_sibling(new_entity)
+	get_tree().get_root().add_child(new_entity)
 	new_entity.global_position = global_position
 	if player.power_level > self.power_level:
 		while(player.power_level > 0 and self.power_level > 0):
