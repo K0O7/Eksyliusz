@@ -11,6 +11,8 @@ var basic_power = 10
 @onready var entity_spawner: Node2D = $entity_spawner
 @onready var robot_spawner = $RobotSpawner/entity_spawner
 
+@onready var sprite2d = $Sprite2D
+@onready var sprite_anim: AnimatedSprite2D = $AnimatedSprite2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -42,6 +44,9 @@ func camp_is_attacked(player: CharacterBody2D):
 			self.power_level = self.basic_power
 			self.power.text = str(self.power_level)
 			self.is_enemy = false
+			self.sprite2d.visible = false
+			self.sprite_anim.visible = true
+			self.sprite_anim.play("default")
 			GameManager.castle_taken.emit()
 			entity_spawner.start = true
 			robot_spawner.start = true
