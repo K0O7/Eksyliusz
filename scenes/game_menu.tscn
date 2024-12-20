@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://hjuxrulef5h"]
 
 [ext_resource type="Script" path="res://scripts/gamemenu.gd" id="1_q4qta"]
-[ext_resource type="PackedScene" uid="uid://bsiev1nkmvlu5" path="res://scenes/node_2d.tscn" id="2_wxy64"]
+[ext_resource type="PackedScene" path="res://scenes/node_2d.tscn" id="2_wxy64"]
 [ext_resource type="PackedScene" uid="uid://d2eqsgeagiwa3" path="res://scenes/cursor.tscn" id="3_fmxpb"]
-[ext_resource type="FontFile" uid="uid://catlkii4d174k" path="res://Art/Fonts/GamjaFlower-Regular.ttf" id="3_x58je"]
-[ext_resource type="Texture2D" uid="uid://cp1ts7dwtxmbf" path="res://Art/Buttons/button.png" id="4_8b3ls"]
+[ext_resource type="FontFile" uid="uid://catlkii4d174k" path="res://art/Fonts/GamjaFlower-Regular.ttf" id="3_x58je"]
+[ext_resource type="Texture2D" uid="uid://cp1ts7dwtxmbf" path="res://art/Buttons/button.png" id="4_8b3ls"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5jhv8"]
 
@@ -25,7 +25,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 401.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 50
@@ -38,22 +37,25 @@ layout_mode = 2
 
 [node name="menu" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 2
+size_flags_vertical = 5
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/menu"]
 material = SubResource("ShaderMaterial_5jhv8")
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_x58je")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 70
 text = "Eksyliusz: The Fall"
 
 [node name="Start" type="Button" parent="MarginContainer/HBoxContainer/menu"]
+clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 10
+size_flags_vertical = 4
+theme_override_constants/icon_max_width = 200
 theme_override_fonts/font = ExtResource("3_x58je")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = "Start"
 icon = ExtResource("4_8b3ls")
 flat = true
@@ -64,8 +66,9 @@ material = SubResource("ShaderMaterial_cr0a7")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
+theme_override_constants/icon_max_width = 200
 theme_override_fonts/font = ExtResource("3_x58je")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = "Settings"
 icon = ExtResource("4_8b3ls")
 flat = true
@@ -75,8 +78,9 @@ icon_alignment = 1
 material = SubResource("ShaderMaterial_cr0a7")
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/icon_max_width = 200
 theme_override_fonts/font = ExtResource("3_x58je")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = "About"
 icon = ExtResource("4_8b3ls")
 flat = true
@@ -87,8 +91,9 @@ material = SubResource("ShaderMaterial_cr0a7")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
+theme_override_constants/icon_max_width = 200
 theme_override_fonts/font = ExtResource("3_x58je")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = "Exit
 "
 icon = ExtResource("4_8b3ls")
@@ -98,7 +103,8 @@ icon_alignment = 1
 [node name="settings" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 visible = false
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 0
+size_flags_vertical = 5
 
 [node name="SettingLabel" type="Label" parent="MarginContainer/HBoxContainer/settings"]
 material = SubResource("ShaderMaterial_5jhv8")
@@ -106,19 +112,20 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("3_x58je")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 70
 text = "Settings"
 
 [node name="MusicLabel" type="Label" parent="MarginContainer/HBoxContainer/settings"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("3_x58je")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 text = "Music"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="musicVol" type="HSlider" parent="MarginContainer/HBoxContainer/settings"]
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 size_flags_vertical = 2
 max_value = 1.0
@@ -129,12 +136,13 @@ value = 1.0
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("3_x58je")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 text = "SFX"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="sfxVol" type="HSlider" parent="MarginContainer/HBoxContainer/settings"]
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 size_flags_vertical = 2
 max_value = 1.0
@@ -145,8 +153,9 @@ value = 1.0
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/icon_max_width = 200
 theme_override_fonts/font = ExtResource("3_x58je")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = "Back"
 icon = ExtResource("4_8b3ls")
 flat = true
@@ -155,7 +164,8 @@ icon_alignment = 1
 [node name="about" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 visible = false
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 2
+size_flags_vertical = 5
 
 [node name="AboutLabel" type="Label" parent="MarginContainer/HBoxContainer/about"]
 material = SubResource("ShaderMaterial_5jhv8")
@@ -188,8 +198,9 @@ custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+theme_override_constants/icon_max_width = 200
 theme_override_fonts/font = ExtResource("3_x58je")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = "Back"
 icon = ExtResource("4_8b3ls")
 flat = true
