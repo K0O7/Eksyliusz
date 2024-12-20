@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://dmv8yju41om5k"]
+[gd_scene load_steps=85 format=3 uid="uid://dmv8yju41om5k"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_biwl8"]
 [ext_resource type="Texture2D" uid="uid://74lhawxe5skj" path="res://Art/Villager/Idle/Chłop_Stoi-1.PNG" id="2_c2w4o"]
@@ -78,6 +78,7 @@
 [ext_resource type="Texture2D" uid="uid://cp158jldp5jjm" path="res://Art/Villager/WalkBackwards/Chłop_Idzie_Tyłem-7.PNG" id="44_ujgu1"]
 [ext_resource type="Texture2D" uid="uid://3o1l3r32b6af" path="res://Art/Villager/WalkBackwards/Chłop_Idzie_Tyłem-8.PNG" id="45_81u6t"]
 [ext_resource type="FontFile" uid="uid://catlkii4d174k" path="res://Art/Fonts/GamjaFlower-Regular.ttf" id="78_28rb6"]
+[ext_resource type="Texture2D" uid="uid://bbsrys3xegq1b" path="res://Art/Enviro/lightmap.png" id="79_a6a2q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmn1p"]
 size = Vector2(26, 26)
@@ -573,6 +574,12 @@ theme_override_font_sizes/font_size = 45
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.6
+shadow_enabled = true
+texture = ExtResource("79_a6a2q")
+texture_scale = 0.5
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

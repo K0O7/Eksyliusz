@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dr5rocmd3d0wy"]
+[gd_scene load_steps=21 format=3 uid="uid://dr5rocmd3d0wy"]
 
 [ext_resource type="Script" path="res://scripts/enemy_camp.gd" id="1_njo6u"]
 [ext_resource type="PackedScene" uid="uid://bqo7cnn1b7epi" path="res://scenes/smoke.tscn" id="2_8o2nv"]
@@ -58,6 +58,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_aw33e"]
+polygon = PackedVector2Array(-16, 16, -19, 0, -18, -5, -14, 3, -13, 5, -12, 5, -11, 4, -9, 4, -9, 6, -7, 6, -7, 5, -5, 5, -5, 6, -3, 6, -3, 5, -1, 5, -1, 6, 2, 6, 2, 5, 4, 5, 5, 6, 6, 6, 6, 5, 8, 5, 9, 6, 10, 6, 10, 5, 13, 5, 14, 6, 15, 5, 16, -1, 19, -6, 20, 0, 17, 16, 10, 15, 3, 15, -5, 15, -12, 15)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gw8yq"]
+polygon = PackedVector2Array(-14, 13, -15, 4, -17, 3, -17, -2, -15, -2, -15, 0, -14, 0, -14, -2, -12, -2, -12, 0, -11, 0, -11, -2, -9, -2, -9, 2, -10, 2, -10, 4, -9, 4, -8, 5, -7, 5, -7, 6, -6, 6, -6, 5, -4, 5, -4, 6, -2, 6, -3, 5, 0, 4, 0, 5, 1, 5, 1, 4, 3, 4, 3, 5, 5, 5, 5, 3, 6, 3, 6, 5, 8, 5, 8, -8, 7, -8, 7, -11, 8, -11, 8, -10, 10, -9, 10, -11, 12, -11, 12, -9, 15, -9, 15, -11, 17, -11, 17, -8, 15, -7, 15, 14, 14, 15, -2, 15, -14, 15)
+
 [node name="enemy_camp" type="Area2D" groups=["attackable"]]
 script = ExtResource("1_njo6u")
 power_level = 200
@@ -76,6 +82,7 @@ scale = Vector2(0.0313448, 0.0331886)
 texture = ExtResource("4_ybxxj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(3, -3)
 scale = Vector2(0.06, 0.06)
 sprite_frames = SubResource("SpriteFrames_s7y36")
@@ -93,6 +100,13 @@ theme_override_font_sizes/font_size = 16
 text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LightOccluder1" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_aw33e")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource("OccluderPolygon2D_gw8yq")
 
 [node name="RobotSpawner" type="Node2D" parent="."]
 position = Vector2(0, -100)
