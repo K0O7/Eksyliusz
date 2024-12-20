@@ -30,7 +30,7 @@ animations = [{
 }]
 
 [node name="Smoke" type="Node2D"]
-scale = Vector2(0.05, 0.05)
+scale = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8ljek")

@@ -11,6 +11,7 @@ size = Vector2(17.5, 18)
 
 [node name="support_unit" type="CharacterBody2D" groups=["support"]]
 script = ExtResource("1_o6vht")
+speed = 450
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5mvt6")

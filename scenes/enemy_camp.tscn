@@ -15,6 +15,7 @@ power_level = 200
 smoke = ExtResource("2_8o2nv")
 
 [node name="entity_spawner" parent="." instance=ExtResource("2_68p1t")]
+time_to_spawn = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -38,5 +39,6 @@ vertical_alignment = 1
 position = Vector2(0, -100)
 
 [node name="entity_spawner" parent="RobotSpawner" instance=ExtResource("2_68p1t")]
+time_to_spawn = 80.0
 entity_to_spawn = ExtResource("4_igdnt")
 is_robot = true
