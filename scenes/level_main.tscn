@@ -9375,14 +9375,17 @@ tile_map_data = PackedByteArray("AABvAP7/AQAAAAAAAQDHAP//AQAAAAAAAQDIAHgAAQAAAAA
 
 [node name="Player" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("8_v8k1b")]
 position = Vector2(-1814, -250)
+scale = Vector2(5, 5)
 tilemap = NodePath("../NavigationRegion2D/TileMapLayer")
 cell_size = 8
-speed = 30
+speed = 300
 acceleration = 100
 power_level = 50
 is_active = true
 
 [node name="Cursor" parent="." instance=ExtResource("9_3yrua")]
+scale = Vector2(0.2, 0.2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.1, 0.1)
 script = ExtResource("10_ppyc4")

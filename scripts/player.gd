@@ -56,6 +56,7 @@ func _physics_process(delta):
 	make_minions_sound()
 	make_yippie_sound()
 	var is_close_to_curr_cell = adjus_to_cell + (tilemap.map_to_local(curr_pos + direction)) - global_position
+	print(is_close_to_curr_cell)
 	if (!is_moving && grid_diff == Vector2.ZERO):
 		velocity = Vector2.ZERO
 		direction = Vector2.ZERO
@@ -65,7 +66,7 @@ func _physics_process(delta):
 		is_moving = false
 		return
 		
-	elif (is_moving && is_close_to_curr_cell.length() < 1):
+	elif (is_moving && (is_close_to_curr_cell.x + is_close_to_curr_cell.y) < 2 && (is_close_to_curr_cell.x + is_close_to_curr_cell.y) > -2):
 		is_moving = false
 		curr_pos = curr_pos + direction
 		global_position = tilemap.map_to_local(curr_pos)
