@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b7q4ek52ity0f"]
+[gd_scene load_steps=17 format=3 uid="uid://b7q4ek52ity0f"]
 
 [ext_resource type="Script" path="res://scripts/enemy_robot.gd" id="1_omao4"]
 [ext_resource type="Texture2D" uid="uid://d4ebomygrthy3" path="res://Art/Robot/Grafika_bez_nazwy-1.PNG" id="1_pucch"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bqqbppoi4ct6t" path="res://Art/Robot/Grafika_bez_nazwy-8.PNG" id="8_0kpgb"]
 [ext_resource type="Texture2D" uid="uid://cijqddgft3jvv" path="res://Art/Robot/Grafika_bez_nazwy-9.PNG" id="9_khg1g"]
 [ext_resource type="Texture2D" uid="uid://chlfied70r35x" path="res://Art/Robot/Grafika_bez_nazwy-10.PNG" id="10_lc3t0"]
+[ext_resource type="FontFile" uid="uid://catlkii4d174k" path="res://Art/Fonts/GamjaFlower-Regular.ttf" id="13_nf12p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cdagq"]
 radius = 13.0
@@ -76,10 +77,13 @@ frame_progress = 0.41504
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [node name="power" type="Label" parent="."]
-offset_left = -20.0
-offset_top = -36.0
-offset_right = 20.0
-offset_bottom = -13.0
+offset_left = -24.0
+offset_top = -48.0
+offset_right = 16.0
+offset_bottom = -23.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("13_nf12p")
+theme_override_font_sizes/font_size = 24
 text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
