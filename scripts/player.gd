@@ -66,7 +66,7 @@ func _physics_process(delta):
 		is_moving = false
 		return
 		
-	elif (is_moving && (is_close_to_curr_cell.x + is_close_to_curr_cell.y) < 2 && (is_close_to_curr_cell.x + is_close_to_curr_cell.y) > -2):
+	elif (is_moving && (is_close_to_curr_cell.x + is_close_to_curr_cell.y) < 50 && (is_close_to_curr_cell.x + is_close_to_curr_cell.y) > -50):
 		is_moving = false
 		curr_pos = curr_pos + direction
 		global_position = tilemap.map_to_local(curr_pos)

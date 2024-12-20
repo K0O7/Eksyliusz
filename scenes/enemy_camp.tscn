@@ -35,7 +35,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RobotSpawner" type="Node2D" parent="."]
-visible = false
 position = Vector2(0, -100)
 
 [node name="entity_spawner" parent="RobotSpawner" instance=ExtResource("2_68p1t")]
