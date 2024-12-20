@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dr5rocmd3d0wy"]
+[gd_scene load_steps=19 format=3 uid="uid://dr5rocmd3d0wy"]
 
 [ext_resource type="Script" path="res://scripts/enemy_camp.gd" id="1_njo6u"]
 [ext_resource type="PackedScene" uid="uid://bqo7cnn1b7epi" path="res://scenes/smoke.tscn" id="2_8o2nv"]
@@ -6,9 +6,57 @@
 [ext_resource type="PackedScene" uid="uid://b7q4ek52ity0f" path="res://scenes/enemy_robot.tscn" id="4_igdnt"]
 [ext_resource type="Texture2D" uid="uid://d0emijy0vgeqt" path="res://Art/Enviro/IMG_1792.png" id="4_ybxxj"]
 [ext_resource type="FontFile" uid="uid://catlkii4d174k" path="res://Art/Fonts/GamjaFlower-Regular.ttf" id="5_4pixn"]
+[ext_resource type="Texture2D" uid="uid://dkrxe2xld35yg" path="res://Art/captured_castle/Grafika_bez_nazwy-1.PNG" id="5_wdo44"]
+[ext_resource type="Texture2D" uid="uid://bvva8kxra3hhn" path="res://Art/captured_castle/Grafika_bez_nazwy-2.PNG" id="6_0acfy"]
+[ext_resource type="Texture2D" uid="uid://dddstbh6d2pbl" path="res://Art/captured_castle/Grafika_bez_nazwy-3.PNG" id="7_sh860"]
+[ext_resource type="Texture2D" uid="uid://1ggwuuouh3oa" path="res://Art/captured_castle/Grafika_bez_nazwy-4.PNG" id="8_oskar"]
+[ext_resource type="Texture2D" uid="uid://1t8i2w66oi88" path="res://Art/captured_castle/Grafika_bez_nazwy-5.PNG" id="9_map7w"]
+[ext_resource type="Texture2D" uid="uid://bn0cb3o35ifkc" path="res://Art/captured_castle/Grafika_bez_nazwy-6.PNG" id="10_b7b00"]
+[ext_resource type="Texture2D" uid="uid://igecfynlm2vh" path="res://Art/captured_castle/Grafika_bez_nazwy-7.PNG" id="11_upjlv"]
+[ext_resource type="Texture2D" uid="uid://cmg7lvyahc4yp" path="res://Art/captured_castle/Grafika_bez_nazwy-8.PNG" id="12_i05wd"]
+[ext_resource type="Texture2D" uid="uid://djileicxfr367" path="res://Art/captured_castle/Grafika_bez_nazwy-9.PNG" id="13_cw2vi"]
+[ext_resource type="Texture2D" uid="uid://ccpqdqqbv6p3t" path="res://Art/captured_castle/Grafika_bez_nazwy-10.PNG" id="14_3yqy8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5kuu"]
 size = Vector2(28, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7y36"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wdo44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0acfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sh860")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_oskar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_map7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_b7b00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_upjlv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_i05wd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cw2vi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3yqy8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="enemy_camp" type="Area2D" groups=["attackable"]]
 script = ExtResource("1_njo6u")
@@ -26,6 +74,13 @@ shape = SubResource("RectangleShape2D_x5kuu")
 position = Vector2(0.5, -5.96046e-08)
 scale = Vector2(0.0313448, 0.0331886)
 texture = ExtResource("4_ybxxj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -3)
+scale = Vector2(0.06, 0.06)
+sprite_frames = SubResource("SpriteFrames_s7y36")
+frame = 8
+frame_progress = 0.303388
 
 [node name="power" type="Label" parent="."]
 offset_left = -18.0
