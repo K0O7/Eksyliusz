@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://cxpxyvhtbpxld"]
+[gd_scene load_steps=28 format=4 uid="uid://cxpxyvhtbpxld"]
 
 [ext_resource type="Texture2D" uid="uid://8wi7s8rtr0wo" path="res://Art/Tiles/Grass.png" id="1_0wkiq"]
 [ext_resource type="PackedScene" uid="uid://dr5rocmd3d0wy" path="res://scenes/enemy_camp.tscn" id="1_f48qu"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://nsucix34ipte" path="res://Art/Tiles/las4.png" id="9_4kfa3"]
 [ext_resource type="Texture2D" uid="uid://brg3pymk67ep7" path="res://Art/Tiles/Las5.png" id="10_b5yst"]
 [ext_resource type="Script" path="res://scripts/camera_control.gd" id="10_ppyc4"]
+[ext_resource type="PackedScene" uid="uid://dmv8yju41om5k" path="res://scenes/player2.tscn" id="12_13h1q"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_grs0e"]
 vertices = PackedVector2Array(7824.81, 12886.2, 12165, 12955.8, 12080, 13420, 7814.82, 13436, 6024.76, 818, 5194.49, 855.508, 5214.46, 420.109, 8381.98, -1408, 2725.89, 11109.4, 1721.82, 11173.4, 1695.83, 9603.94, 3179.81, 6264.91, 4489.2, 6255.03, 6075.2, 9647.25, 6043.21, 11194.4, 4964.73, 11125.3, 1425.06, 6281.09, 6293.31, 6248.97, 6261.31, 5203.03, 7554, 5207.96, 7554, 9609.25, 22198.6, 922.008, 22113, -1482.08, 22113, -2443.07, 26476.9, -2474.92, 26456, -829.992, 24998, 1931.03, 23637.9, 1862.89, 24993, 12470.2, 26418, 12438.2, 26434, 16768.9, 22144.8, 16737.1, 22118.8, 15723, -2970.11, 458.07, -2986.87, -948.953, -1929.05, -943.953, -2453.96, 462.07, 26497.8, 1926.03, 131, 9613.93, 131, 5224.08, 1419.05, 5234.91, 11332.6, -1413.02, 11380.5, -2474.98, 15766.1, -2468.99, 15761, -1428.92, 11373.5, 804.977, 22167.1, 13415, 22156.1, 12437.9, 23720.1, 12415.9, -1924.05, -1942, -653.812, -1942, -633.797, -928.977, 3200.81, 5208, 4468.2, 5208, 22239.6, 1878.88, 12103.3, 15723, 12071.3, 16743, 7835.18, 16753, 7749.19, 15739, 15785.8, 911.992, 15607.8, 1830.88, 11427.5, 1771.13, -313.492, 951.867, -2408.94, 905.188, 49.4609, 364.938, 5145.07, -939.008, 5251.05, -1427.94, 5023.25, 13447, 2773.89, 15717)
@@ -9425,6 +9426,15 @@ speed = 450
 acceleration = 100
 power_level = 50
 is_active = true
+
+[node name="Player2" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("12_13h1q")]
+scale = Vector2(5, 5)
+tilemap = NodePath("../NavigationRegion2D/TileMapLayer")
+cell_size = 256
+speed = 450
+acceleration = 100
+starting_pos = Vector2(0, -2)
+power_level = 50
 
 [node name="enemy_camp" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("1_f48qu")]
 scale = Vector2(20, 20)
