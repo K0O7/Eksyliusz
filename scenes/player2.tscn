@@ -534,6 +534,7 @@ animated_sprite_2d = NodePath("Knight")
 shape = SubResource("RectangleShape2D_pmn1p")
 
 [node name="Villager1" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(-28, -14)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_o7vfx")
@@ -541,6 +542,7 @@ animation = &"Idle"
 autoplay = "Idle"
 
 [node name="Villager2" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(28, -14)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_crh3x")

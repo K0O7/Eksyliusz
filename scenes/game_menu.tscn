@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://hjuxrulef5h"]
+[gd_scene load_steps=11 format=3 uid="uid://hjuxrulef5h"]
 
 [ext_resource type="Script" path="res://scripts/gamemenu.gd" id="1_q4qta"]
-[ext_resource type="PackedScene" uid="uid://b1kcwjankqxip" path="res://scenes/level_main.tscn" id="2_6uxce"]
+[ext_resource type="PackedScene" uid="uid://b1kcwjankqxip" path="res://scenes/level_main.tscn" id="2_6flyv"]
+[ext_resource type="Texture2D" uid="uid://bw2furwiofww1" path="res://Art/UI/menu_bg.png" id="2_w7ofm"]
 [ext_resource type="PackedScene" uid="uid://d2eqsgeagiwa3" path="res://scenes/cursor.tscn" id="3_fmxpb"]
 [ext_resource type="FontFile" uid="uid://catlkii4d174k" path="res://Art/Fonts/GamjaFlower-Regular.ttf" id="3_x58je"]
 [ext_resource type="Texture2D" uid="uid://cp1ts7dwtxmbf" path="res://Art/Buttons/button.png" id="4_8b3ls"]
+[ext_resource type="Texture2D" uid="uid://d12br6ft2pdit" path="res://Art/logotyp.png" id="4_ch2w1"]
 [ext_resource type="Texture2D" uid="uid://ucf1umpyqrrg" path="res://Art/Buttons/koło.png" id="5_spvk7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5jhv8"]
@@ -19,7 +21,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q4qta")
-game_scene = ExtResource("2_6uxce")
+game_scene = ExtResource("2_6flyv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -59.0
+offset_top = -38.0
+offset_right = 709.0
+offset_bottom = 394.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("2_w7ofm")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -41,13 +57,17 @@ layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 5
 
+[node name="Logotyp" type="Sprite2D" parent="MarginContainer/HBoxContainer/menu"]
+position = Vector2(121, 38.5)
+scale = Vector2(0.137, 0.137)
+texture = ExtResource("4_ch2w1")
+
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/menu"]
 material = SubResource("ShaderMaterial_5jhv8")
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_x58je")
 theme_override_font_sizes/font_size = 70
-text = "Eksyliusz: The Fall"
 
 [node name="Start" type="Button" parent="MarginContainer/HBoxContainer/menu"]
 clip_contents = true
@@ -189,14 +209,14 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_x58je")
 theme_override_font_sizes/font_size = 30
-text = "Game design: 
-Filip Krężel
-
-Programmer:
+text = "Team:
+Filip Krezel
 Mateusz Salach
-
-Art:
-Dominika Jakubczyk"
+Dominika Jakubczyk
+Piotr Dulinski
+Dominika Czarnecka
+Amelia Waligorska
+Krzysztof Koba"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -1,12 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdcrxuv3omup8"]
+[gd_scene load_steps=19 format=3 uid="uid://cdcrxuv3omup8"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_vrpnq"]
 [ext_resource type="FontFile" uid="uid://catlkii4d174k" path="res://Art/Fonts/GamjaFlower-Regular.ttf" id="2_hqvtx"]
 [ext_resource type="Texture2D" uid="uid://cp1ts7dwtxmbf" path="res://Art/Buttons/button.png" id="3_gu1k7"]
+[ext_resource type="Texture2D" uid="uid://i2kgdmntoyul" path="res://Art/UI/morale smutny.png" id="4_02hd3"]
+[ext_resource type="Texture2D" uid="uid://cxs4seik536jr" path="res://Art/UI/morale zly.png" id="4_hab64"]
+[ext_resource type="Texture2D" uid="uid://bxy2hceemm2gd" path="res://Art/UI/morale neutralny.png" id="6_qy0x1"]
+[ext_resource type="Texture2D" uid="uid://5kbcsfmmlfc8" path="res://Art/UI/morale szczesliwy.png" id="7_3xj5s"]
+[ext_resource type="Texture2D" uid="uid://bd1ddfi8lbex3" path="res://Art/UI/wybor gracza 1.png" id="8_wlo4c"]
+[ext_resource type="Texture2D" uid="uid://do141i5p4e7jt" path="res://Art/UI/wybor gracza 2.png" id="9_h83pi"]
+[ext_resource type="Texture2D" uid="uid://8h1jaqoil5v" path="res://Art/UI/timer kolo.png" id="10_ubm5v"]
+[ext_resource type="Texture2D" uid="uid://c5sr0p2wt6mob" path="res://Art/UI/timer bg.png" id="11_pf1pf"]
+[ext_resource type="Texture2D" uid="uid://c44ocyd2y6xsc" path="res://Art/UI/power.png" id="12_46ajt"]
+[ext_resource type="Texture2D" uid="uid://diym15od3eqjs" path="res://Art/UI/resources.png" id="13_x6x6u"]
+[ext_resource type="Texture2D" uid="uid://davi0tuj3qav" path="res://Art/Buttons/koło_hq.png" id="14_32s2k"]
+[ext_resource type="PackedScene" uid="uid://c73tm8t682w5" path="res://scenes/scrolling_news.tscn" id="15_c64su"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aso6y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0gbwd"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_67hvg"]
+frames = 4
+pause = true
+frame_0/texture = ExtResource("4_02hd3")
+frame_1/texture = ExtResource("4_hab64")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_qy0x1")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_3xj5s")
+frame_3/duration = 1.0
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -98,6 +121,7 @@ flat = true
 icon_alignment = 1
 
 [node name="settings" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 6
 
@@ -153,6 +177,89 @@ text = "Back"
 icon = ExtResource("3_gu1k7")
 flat = true
 icon_alignment = 1
+
+[node name="IG_UI" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Morale" type="TextureRect" parent="IG_UI"]
+layout_mode = 0
+offset_top = 398.0
+offset_right = 2602.0
+offset_bottom = 3000.0
+scale = Vector2(0.05, 0.05)
+texture = SubResource("AnimatedTexture_67hvg")
+
+[node name="Player1" type="TextureRect" parent="IG_UI"]
+layout_mode = 0
+offset_left = 892.0
+offset_top = 398.0
+offset_right = 3494.0
+offset_bottom = 3000.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("8_wlo4c")
+
+[node name="Player2" type="TextureRect" parent="IG_UI"]
+layout_mode = 0
+offset_left = 1022.0
+offset_top = 398.0
+offset_right = 3624.0
+offset_bottom = 3000.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("9_h83pi")
+
+[node name="Timer" type="TextureRect" parent="IG_UI"]
+layout_mode = 0
+offset_left = 1022.0
+offset_right = 3624.0
+offset_bottom = 2602.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("10_ubm5v")
+
+[node name="TextureRect" type="TextureRect" parent="IG_UI/Timer"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("11_pf1pf")
+
+[node name="Label" type="Label" parent="IG_UI/Timer"]
+layout_mode = 0
+offset_right = 2580.0
+offset_bottom = 2620.0
+theme_override_fonts/font = ExtResource("2_hqvtx")
+theme_override_font_sizes/font_size = 1024
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Power" type="TextureRect" parent="IG_UI"]
+layout_mode = 0
+offset_left = 1050.0
+offset_top = 128.0
+offset_right = 3652.0
+offset_bottom = 2730.0
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("12_46ajt")
+
+[node name="Resources" type="TextureRect" parent="IG_UI"]
+layout_mode = 0
+offset_left = 1050.0
+offset_top = 200.0
+offset_right = 3652.0
+offset_bottom = 2802.0
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("13_x6x6u")
+
+[node name="Settings" type="Button" parent="IG_UI"]
+layout_mode = 0
+offset_right = 2610.0
+offset_bottom = 2610.0
+scale = Vector2(0.05, 0.05)
+icon = ExtResource("14_32s2k")
+flat = true
+
+[node name="ScrollingNews" parent="." instance=ExtResource("15_c64su")]
 
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/menu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/menu/Settings" to="." method="_on_settings_pressed"]

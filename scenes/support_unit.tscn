@@ -1,14 +1,53 @@
-[gd_scene load_steps=6 format=3 uid="uid://dn7lu6n6tqu0r"]
+[gd_scene load_steps=14 format=3 uid="uid://evj5kefvjb7u"]
 
 [ext_resource type="Script" path="res://scripts/support_unit.gd" id="1_o6vht"]
-[ext_resource type="Texture2D" uid="uid://74lhawxe5skj" path="res://Art/Villager/Idle/Chłop_Stoi-1.PNG" id="2_iq4lg"]
+[ext_resource type="Texture2D" uid="uid://c18c082xlenew" path="res://Art/Villager/WalkDown/Grafika_bez_nazwy-1.PNG" id="2_qmwd8"]
 [ext_resource type="FontFile" uid="uid://catlkii4d174k" path="res://Art/Fonts/GamjaFlower-Regular.ttf" id="3_8eo1n"]
+[ext_resource type="Texture2D" uid="uid://ju0dtfgrm0pe" path="res://Art/Villager/WalkDown/Grafika_bez_nazwy-2.PNG" id="3_vftfp"]
+[ext_resource type="Texture2D" uid="uid://bltl5yj82odxw" path="res://Art/Villager/WalkDown/Grafika_bez_nazwy-3.PNG" id="4_u4ekx"]
+[ext_resource type="Texture2D" uid="uid://clh3qaqo1yl30" path="res://Art/Villager/WalkDown/Grafika_bez_nazwy-4.PNG" id="5_s7xa3"]
+[ext_resource type="Texture2D" uid="uid://c0scbwy7q6gdv" path="res://Art/Villager/WalkDown/Grafika_bez_nazwy-5.PNG" id="6_hlbd8"]
+[ext_resource type="Texture2D" uid="uid://bs772urfn834i" path="res://Art/Villager/WalkDown/Grafika_bez_nazwy-6.PNG" id="7_35p5m"]
+[ext_resource type="Texture2D" uid="uid://ccckhnuguit4o" path="res://Art/Villager/WalkDown/Grafika_bez_nazwy-7.PNG" id="8_j1laj"]
+[ext_resource type="Texture2D" uid="uid://boxj41obxm733" path="res://Art/Villager/WalkDown/Grafika_bez_nazwy-8.PNG" id="9_mv7ba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mvt6"]
 size = Vector2(12.5, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu52y"]
 size = Vector2(17.5, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t5bn1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qmwd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vftfp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u4ekx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s7xa3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hlbd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_35p5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_j1laj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mv7ba")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="support_unit" type="CharacterBody2D" groups=["support"]]
 script = ExtResource("1_o6vht")
@@ -24,9 +63,11 @@ shape = SubResource("RectangleShape2D_lu52y")
 
 [node name="navig_agent" type="NavigationAgent2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.02125, 0.020125)
-texture = ExtResource("2_iq4lg")
+sprite_frames = SubResource("SpriteFrames_t5bn1")
+autoplay = "default"
+frame_progress = 0.643027
 
 [node name="power" type="Label" parent="."]
 offset_left = -20.0

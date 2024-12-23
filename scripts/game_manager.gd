@@ -7,6 +7,7 @@ signal castle_taken
 signal castle_lost
 signal player_win
 signal player_lose
+signal new_annoucement
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -1,7 +1,7 @@
 extends Node
 
 
-@export var main_menu: PackedScene
+#@export var main_menu: PackedScene
 @export var is_loop: bool
 
 # Called when the node enters the scene tree for the first time.
@@ -18,5 +18,5 @@ func _process(delta):
 
 
 func _on_change_scene():
-	AudioPlayer.change_scene(main_menu.resource_name)
-	get_tree().change_scene_to_packed(main_menu)
+	AudioPlayer.change_scene("game_menu")
+	get_tree().change_scene_to_file("res://scenes/game_menu.tscn")

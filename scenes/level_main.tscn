@@ -1,12 +1,10 @@
-[gd_scene load_steps=86 format=4 uid="uid://b1kcwjankqxip"]
+[gd_scene load_steps=85 format=4 uid="uid://b1kcwjankqxip"]
 
 [ext_resource type="Texture2D" uid="uid://8wi7s8rtr0wo" path="res://Art/Tiles/Grass.png" id="1_0wkiq"]
 [ext_resource type="Script" path="res://scripts/main_game.gd" id="1_6rfje"]
 [ext_resource type="PackedScene" uid="uid://dr5rocmd3d0wy" path="res://scenes/enemy_camp.tscn" id="1_f48qu"]
 [ext_resource type="Texture2D" uid="uid://nxwauvfk3ov4" path="res://Art/Tiles/Las2.png" id="2_8merb"]
-[ext_resource type="PackedScene" uid="uid://c0b7nwo5n1isl" path="res://game_win.tscn" id="2_p6u7m"]
 [ext_resource type="Texture2D" uid="uid://b64qlkhsh6jex" path="res://Art/Tiles/Las.png" id="3_7w4jx"]
-[ext_resource type="PackedScene" uid="uid://hndpvyp44fc4" path="res://scenes/game_over.tscn" id="3_na24v"]
 [ext_resource type="Texture2D" uid="uid://dw3layxqfw2td" path="res://Art/Tiles/RocksGrass.png" id="4_qxld7"]
 [ext_resource type="Texture2D" uid="uid://cdpuc1xagssku" path="res://Art/Tiles/RockyRocks.png" id="5_e05c2"]
 [ext_resource type="Texture2D" uid="uid://bqt3kxsxd1224" path="res://Art/Tiles/RockyTerrain.png" id="6_nfd0x"]
@@ -9629,10 +9627,12 @@ sources/7 = SubResource("TileSetAtlasSource_iu30r")
 sources/8 = SubResource("TileSetAtlasSource_cyw3c")
 sources/9 = SubResource("TileSetAtlasSource_3l5o8")
 
+[sub_resource type="Environment" id="Environment_xu8lv"]
+ambient_light_source = 3
+ambient_light_color = Color(0.775063, 0.775063, 0.775063, 1)
+
 [node name="LevelMain" type="Node2D"]
 script = ExtResource("1_6rfje")
-win_scene = ExtResource("2_p6u7m")
-lose_scene = ExtResource("3_na24v")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_grs0e")
@@ -9648,7 +9648,7 @@ tilemap = NodePath("../NavigationRegion2D/TileMapLayer")
 cell_size = 256
 speed = 1000
 acceleration = 100
-power_level = 1
+power_level = 100
 is_active = true
 
 [node name="Player2" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("12_13h1q")]
@@ -9705,3 +9705,6 @@ bottom_limit = 20000
 [node name="Cursor" parent="CanvasLayer" instance=ExtResource("9_3yrua")]
 process_mode = 3
 z_index = 3
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xu8lv")
