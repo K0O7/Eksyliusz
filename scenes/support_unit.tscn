@@ -50,6 +50,7 @@ animations = [{
 }]
 
 [node name="support_unit" type="CharacterBody2D" groups=["support"]]
+collision_mask = 2
 script = ExtResource("1_o6vht")
 speed = 600
 

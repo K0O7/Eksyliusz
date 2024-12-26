@@ -11,6 +11,8 @@ class_name Player
 @onready var sprite_2d_2: AnimatedSprite2D = $Villager2
 @export var animated_sprite_2d: AnimatedSprite2D
 @export var is_active: bool = false
+@onready var point_light_2d: PointLight2D = $PointLight2D
+
 
 
 @onready var navig_agent: NavigationAgent2D = $NavigationAgent2D
@@ -33,6 +35,7 @@ func _ready():
 
 
 func _input(event):
+	GameManager.current_player_power = power_level
 	if is_active:
 		if Input.is_action_just_pressed("LMB_click"):
 			target_pos = tilemap.local_to_map(get_global_mouse_position())
@@ -43,16 +46,25 @@ func _input(event):
 			to_global(tilemap.map_to_local(target_pos))
 
 	if Input.is_action_just_pressed("control_squad_one"):
+		GameManager.player_changed.emit(1)
 		is_active = false
 		if name == "Player":
 			is_active = true
+			
 	elif Input.is_action_just_pressed("control_squad_two"):
+		GameManager.player_changed.emit(2)
 		is_active = false
 		if name == "Player2":
 			is_active = true
 
 
 func _physics_process(delta):
+	if (is_active):
+		GameManager.current_player_power = power_level
+		point_light_2d.visible = true
+	else:
+		point_light_2d.visible = false
+
 	make_minions_sound()
 	make_yippie_sound()
 	var is_close_to_curr_cell = adjus_to_cell + (tilemap.map_to_local(curr_pos + direction)) - global_position
@@ -125,6 +137,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		power.text = str(power_level)
 		units_sprites()
 		body.give_support()
+		GameManager.got_support.emit(3)
 	if body.is_in_group("attackable"):
 		grid_diff = Vector2.ZERO
 		body.robot_is_attacked(self)

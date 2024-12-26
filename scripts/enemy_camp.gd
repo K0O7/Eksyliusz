@@ -87,7 +87,7 @@ func camp_is_attacked_by_robot(player: CharacterBody2D):
 			self.sprite2d.visible = true
 			self.sprite_anim.visible = false
 			self.sprite_anim.stop()
-			GameManager.castle_taken.emit()
+			GameManager.castle_lost.emit()
 			entity_spawner.start = false
 			robot_spawner.start = false
 			AudioPlayer.play_sfx("town_capture", 1)

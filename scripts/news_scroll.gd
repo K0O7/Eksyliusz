@@ -44,7 +44,7 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	just_changed = false
 	texture_rect.visible = true
-	GameManager.new_annoucement.emit()
+	GameManager.new_annoucement.emit(0)
 	news_scroll.scroll_horizontal = 0
 	label.text = news_stories.pick_random()
 	appear_scroll_timer.start()
