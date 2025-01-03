@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnmx7hlvegjug"
-path="res://.godot/imported/morale kolko.png-78b159a9c26cc1d4bd9478f823817c9c.ctex"
+uid="uid://i2kgdmntoyul"
+path="res://.godot/imported/morale_smutny.png-9974ea96e85fe9ca89d991334da08c16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/UI/morale kolko.png"
-dest_files=["res://.godot/imported/morale kolko.png-78b159a9c26cc1d4bd9478f823817c9c.ctex"]
+source_file="res://Art/UI/morale_smutny.png"
+dest_files=["res://.godot/imported/morale_smutny.png-9974ea96e85fe9ca89d991334da08c16.ctex"]
 
 [params]
 

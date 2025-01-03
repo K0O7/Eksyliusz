@@ -46,20 +46,6 @@ var is_clicked_sound = false
 var is_minion_talking = false
 var is_yippie_talking = false
 
-#func _input(event):
-	#if event is InputEventMouseButton && event.pressed && !is_clicked_sound:
-		#is_clicked_sound = true
-		#var asp = AudioStreamPlayer.new()
-		#asp.stream = sfx["mouse_clicked"]
-		#asp.name = "SFX"
-		#asp = add_to_bus(asp, "clicked")
-		#
-		#add_child(asp)
-		#asp.play()
-		#
-		#await asp.finished
-		#asp.queue_free()
-		#is_clicked_sound = false
 
 func play_music(music_name: String):
 	if music_sfx_names.has(music_name):

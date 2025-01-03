@@ -12,11 +12,6 @@ func _ready():
 	GameManager.decrease_game_timer.emit()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-#"res://game_win.tscn"
-
 func player_win():
 	await get_tree().create_timer(1).timeout 
 	AudioPlayer.change_scene("game_win")

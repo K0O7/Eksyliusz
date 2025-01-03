@@ -1,9 +1,9 @@
 extends Control
 
-@onready var panel = $Panel
-@onready var menu_buttons: VBoxContainer = $Panel/MarginContainer/HBoxContainer/menu
-@onready var settings: VBoxContainer = $Panel/MarginContainer/HBoxContainer/settings
-@onready var ig_ui = $IG_UI
+@onready var panel = $PauseMenu/Panel
+@onready var menu_buttons: VBoxContainer = $PauseMenu/Panel/MarginContainer/HBoxContainer/menu
+@onready var settings: VBoxContainer = $PauseMenu/Panel/MarginContainer/HBoxContainer/settings
+@onready var ig_ui = $PauseMenu/IG_UI
 @onready var morale: TextureRect = $PauseMenu/IG_UI/Morale
 @onready var power = $PauseMenu/IG_UI/Power/Label
 @onready var castle_state = $PauseMenu/IG_UI/Resources/Label
@@ -12,11 +12,12 @@ extends Control
 @onready var timer = $PauseMenu/IG_UI/Timer/Label
 
 
-var morale_seq = [
-	"res://Art/UI/morale smutny.png", #sad
-	"res://Art/UI/morale zly.png", # angry
-	"res://Art/UI/morale neutralny.png", # neutral
-	"res://Art/UI/morale szczesliwy.png"  # happy
+@onready var morale_seq = [
+	load("res://Art/UI/morale_kolko.png"), #empty
+	load("res://Art/UI/morale_zly.png"), # angry
+	load("res://Art/UI/morale_neutralny.png"), # neutral
+	load("res://Art/UI/morale_szczesliwy.png"),  # happy
+	load("res://Art/UI/morale_smutny.png") #sad
 ]
 
 
@@ -28,16 +29,17 @@ func _ready():
 	GameManager.got_support.connect(change_morale)
 	GameManager.angry_morale.connect(change_morale)
 	GameManager.player_changed.connect(on_player_change)
+	GameManager.new_annoucement.emit(4)
 
 
-func _process(delta):
+func _process(_delta):
 	castle_state.text = str(GameManager.castle_count) + "/5"
 	power.text = str(GameManager.current_player_power)
 	timer.text = str(GameManager.timer)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("Pause"):
 		manage_pause()
 		
@@ -70,8 +72,7 @@ func _on_back_pressed():
 
 func change_morale(num: int):
 	print(num)
-	var image = Image.load_from_file(morale_seq[num])
-	morale.texture = ImageTexture.create_from_image(image)
+	morale.texture = morale_seq[num]
 
 
 func on_player_change(num: int):

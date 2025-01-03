@@ -1,12 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://cdcrxuv3omup8"]
+[gd_scene load_steps=23 format=3 uid="uid://cdcrxuv3omup8"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_vrpnq"]
 [ext_resource type="FontFile" uid="uid://catlkii4d174k" path="res://Art/Fonts/GamjaFlower-Regular.ttf" id="2_hqvtx"]
 [ext_resource type="Texture2D" uid="uid://cp1ts7dwtxmbf" path="res://Art/Buttons/button.png" id="3_gu1k7"]
-[ext_resource type="Texture2D" uid="uid://i2kgdmntoyul" path="res://Art/UI/morale smutny.png" id="4_02hd3"]
-[ext_resource type="Texture2D" uid="uid://cxs4seik536jr" path="res://Art/UI/morale zly.png" id="4_hab64"]
-[ext_resource type="Texture2D" uid="uid://bxy2hceemm2gd" path="res://Art/UI/morale neutralny.png" id="6_qy0x1"]
-[ext_resource type="Texture2D" uid="uid://5kbcsfmmlfc8" path="res://Art/UI/morale szczesliwy.png" id="7_3xj5s"]
+[ext_resource type="Texture2D" uid="uid://i2kgdmntoyul" path="res://Art/UI/morale_smutny.png" id="4_02hd3"]
+[ext_resource type="Texture2D" uid="uid://cxs4seik536jr" path="res://Art/UI/morale_zly.png" id="4_hab64"]
+[ext_resource type="Texture2D" uid="uid://bnmx7hlvegjug" path="res://Art/UI/morale_kolko.png" id="4_rddan"]
+[ext_resource type="Texture2D" uid="uid://bxy2hceemm2gd" path="res://Art/UI/morale_neutralny.png" id="6_qy0x1"]
+[ext_resource type="Texture2D" uid="uid://5kbcsfmmlfc8" path="res://Art/UI/morale_szczesliwy.png" id="7_3xj5s"]
 [ext_resource type="Shader" path="res://shaders/pause_menu.gdshader" id="8_ay51c"]
 [ext_resource type="Texture2D" uid="uid://bd1ddfi8lbex3" path="res://Art/UI/wybor gracza 1.png" id="8_wlo4c"]
 [ext_resource type="Texture2D" uid="uid://do141i5p4e7jt" path="res://Art/UI/wybor gracza 2.png" id="9_h83pi"]
@@ -22,15 +23,17 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0gbwd"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_67hvg"]
-frames = 4
+frames = 5
 pause = true
-frame_0/texture = ExtResource("4_02hd3")
+frame_0/texture = ExtResource("4_rddan")
 frame_1/texture = ExtResource("4_hab64")
 frame_1/duration = 1.0
 frame_2/texture = ExtResource("6_qy0x1")
 frame_2/duration = 1.0
 frame_3/texture = ExtResource("7_3xj5s")
 frame_3/duration = 1.0
+frame_4/texture = ExtResource("4_02hd3")
+frame_4/duration = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jljjl"]
 shader = ExtResource("8_ay51c")
@@ -63,6 +66,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1225.0
+offset_bottom = 618.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -222,9 +227,9 @@ texture = SubResource("AnimatedTexture_67hvg")
 [node name="Player1" type="TextureRect" parent="PauseMenu/IG_UI"]
 material = SubResource("ShaderMaterial_jljjl")
 layout_mode = 0
-offset_left = 892.0
+offset_left = 946.0
 offset_top = 398.0
-offset_right = 3494.0
+offset_right = 3548.0
 offset_bottom = 3000.0
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("8_wlo4c")
@@ -232,17 +237,17 @@ texture = ExtResource("8_wlo4c")
 [node name="Player2" type="TextureRect" parent="PauseMenu/IG_UI"]
 material = SubResource("ShaderMaterial_pi754")
 layout_mode = 0
-offset_left = 1022.0
+offset_left = 1076.0
 offset_top = 398.0
-offset_right = 3624.0
+offset_right = 3678.0
 offset_bottom = 3000.0
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("9_h83pi")
 
 [node name="Timer" type="TextureRect" parent="PauseMenu/IG_UI"]
 layout_mode = 0
-offset_left = 1022.0
-offset_right = 3624.0
+offset_left = 1076.0
+offset_right = 3678.0
 offset_bottom = 2602.0
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("10_ubm5v")
@@ -265,9 +270,9 @@ vertical_alignment = 1
 
 [node name="Power" type="TextureRect" parent="PauseMenu/IG_UI"]
 layout_mode = 0
-offset_left = 1018.0
+offset_left = 1072.0
 offset_top = 128.0
-offset_right = 3620.0
+offset_right = 3674.0
 offset_bottom = 2730.0
 scale = Vector2(0.03, 0.03)
 texture = ExtResource("12_46ajt")
@@ -285,9 +290,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Resources" type="TextureRect" parent="PauseMenu/IG_UI"]
 layout_mode = 0
-offset_left = 1018.0
+offset_left = 1072.0
 offset_top = 200.0
-offset_right = 3620.0
+offset_right = 3674.0
 offset_bottom = 2802.0
 scale = Vector2(0.03, 0.03)
 texture = ExtResource("13_x6x6u")
@@ -313,7 +318,7 @@ flat = true
 
 [node name="ScrollingNews" parent="PauseMenu" instance=ExtResource("15_c64su")]
 
-[connection signal="pressed" from="PauseMenu/Panel/MarginContainer/HBoxContainer/menu/Resume" to="PauseMenu" method="_on_resume_pressed"]
-[connection signal="pressed" from="PauseMenu/Panel/MarginContainer/HBoxContainer/menu/Settings" to="PauseMenu" method="_on_settings_pressed"]
-[connection signal="pressed" from="PauseMenu/Panel/MarginContainer/HBoxContainer/menu/Exit" to="PauseMenu" method="_on_exit_pressed"]
-[connection signal="pressed" from="PauseMenu/Panel/MarginContainer/HBoxContainer/settings/back" to="PauseMenu" method="_on_back_pressed"]
+[connection signal="pressed" from="PauseMenu/Panel/MarginContainer/HBoxContainer/menu/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/Panel/MarginContainer/HBoxContainer/menu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="PauseMenu/Panel/MarginContainer/HBoxContainer/menu/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="PauseMenu/Panel/MarginContainer/HBoxContainer/settings/back" to="." method="_on_back_pressed"]

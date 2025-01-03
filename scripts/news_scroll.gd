@@ -30,13 +30,10 @@ var just_changed = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	texture_rect.visible = false
-	#appear_scroll_timer.start()
-	pass
-	#set_deferred("scroll_horizontal", 600)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if just_changed:
 		news_scroll.scroll_horizontal += 1
 
@@ -44,7 +41,7 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	just_changed = false
 	texture_rect.visible = true
-	GameManager.new_annoucement.emit(0)
+	GameManager.new_annoucement.emit(4)
 	news_scroll.scroll_horizontal = 0
 	label.text = news_stories.pick_random()
 	appear_scroll_timer.start()

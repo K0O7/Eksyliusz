@@ -34,7 +34,7 @@ func _ready():
 	power.text = str(power_level)
 
 
-func _input(event):
+func _input(_event):
 	GameManager.current_player_power = power_level
 	if is_active:
 		if Input.is_action_just_pressed("LMB_click"):

@@ -20,11 +20,6 @@ func _ready() -> void:
 	power.text = str(power_level)
 	global_position = tilemap.map_to_local(starting_pos)
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 	
 
 func camp_is_attacked(player: CharacterBody2D):

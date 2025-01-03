@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxs4seik536jr"
-path="res://.godot/imported/morale zly.png-b04b67f9b19dfa235e8b0ba764a74e35.ctex"
+uid="uid://5kbcsfmmlfc8"
+path="res://.godot/imported/morale_szczesliwy.png-03876920ffcdfb465ad25ae7212c2522.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/UI/morale zly.png"
-dest_files=["res://.godot/imported/morale zly.png-b04b67f9b19dfa235e8b0ba764a74e35.ctex"]
+source_file="res://Art/UI/morale_szczesliwy.png"
+dest_files=["res://.godot/imported/morale_szczesliwy.png-03876920ffcdfb465ad25ae7212c2522.ctex"]
 
 [params]
 

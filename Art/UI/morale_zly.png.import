@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxy2hceemm2gd"
-path="res://.godot/imported/morale neutralny.png-91420c164c2434517bae2607b81c75ff.ctex"
+uid="uid://cxs4seik536jr"
+path="res://.godot/imported/morale_zly.png-6ceee1bd9cb85cdd52d285c60210d00d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/UI/morale neutralny.png"
-dest_files=["res://.godot/imported/morale neutralny.png-91420c164c2434517bae2607b81c75ff.ctex"]
+source_file="res://Art/UI/morale_zly.png"
+dest_files=["res://.godot/imported/morale_zly.png-6ceee1bd9cb85cdd52d285c60210d00d.ctex"]
 
 [params]
 

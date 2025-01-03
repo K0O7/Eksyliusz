@@ -15,10 +15,6 @@ func _ready() -> void:
 			element.pressed.connect(menu.bind(element.name))
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 	
 func menu(menu_elem):
 	match(menu_elem):

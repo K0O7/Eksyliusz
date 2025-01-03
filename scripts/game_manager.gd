@@ -24,10 +24,6 @@ func _ready():
 	decrease_game_timer.connect(on_one_sec)
 
 
-func _process(delta):
-	pass
-
-
 func update_castle_taken():
 	castle_count += 1
 	

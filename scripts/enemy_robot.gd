@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var power: Label = $power
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction = 1
 	if direction:
 		velocity.y = direction * SPEED

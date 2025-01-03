@@ -7,9 +7,8 @@ func _ready():
 	pass # Replace with function body.
 #
 #
-func _input(event):
+func _input(_event):
 	position = get_global_mouse_position()
 	
 	if Input.is_action_just_pressed("LMB_click"):
-		await play("Click")
 		play("Click")

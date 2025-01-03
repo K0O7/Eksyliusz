@@ -19,7 +19,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var h_dir := Input.get_axis("camera_left", "camera_right")
 	if h_dir:
 		global_position.x += h_dir * SPEED
